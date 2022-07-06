@@ -3,13 +3,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### Perso ###
-src/main/webapp/META-INF/content.xml
-out
-target
-.idea
-*.class
-
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
