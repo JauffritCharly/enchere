@@ -11,13 +11,13 @@ public abstract class ConnectionProvider {
     private static DataSource dataSource;
 
     /**
-     * Au chargement de la classe, la DataSource est recherchée dans le ficheir context.xml
+     * Au chargement de la classe, la DataSource est recherchée dans le fichier context.xml
      */
     static {
         Context context;
         try {
             context = new InitialContext();
-            ConnectionProvider.dataSource = (DataSource) context.lookup("java:comp/env/jdbc/listecourse");
+            ConnectionProvider.dataSource = (DataSource) context.lookup("java:comp/env/jdbc/encherebdd");
         } catch (NamingException e) {
             e.printStackTrace();
             throw new RuntimeException("Impossible d'accéder à la base de données");
