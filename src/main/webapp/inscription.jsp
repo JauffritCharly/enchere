@@ -19,7 +19,7 @@
         <div>
             <div>
                 <label for="pseudo">Pseudo :</label>
-                <input type="text" id="pseudo" name="pseudo">
+                <input type="text" id="pseudo" name="pseudo" value="bob">
             </div>
             <div>
                 <label for="firstName">Prenom :</label>
@@ -35,7 +35,7 @@
             </div>
             <div>
                 <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="pasword">
+                <input type="password" id="password" name="password">
             </div>
         </div>
         <div>
@@ -44,7 +44,7 @@
                 <input type="text" id="name" name="name">
             </div>
             <div>
-                <label for="firstName">Email :</label>
+                <label for="email">Email :</label>
                 <input type="email" id="email" name="email">
             </div>
             <div>
