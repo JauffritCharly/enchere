@@ -2,6 +2,7 @@ package fr.afpa.enchere.dal;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class methodSQL {
 
