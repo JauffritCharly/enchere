@@ -18,6 +18,7 @@
     <%@include file="fragments/headerConnectedFragment.jsp" %>
     }
     !!!!!!!!!!!!!! -->
+    <jsp:include page="fragments/headerInviteFragment.jsp"></jsp:include>
     <h1>Liste des enchères Invité</h1>
 </header>
 <main>
