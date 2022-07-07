@@ -48,12 +48,12 @@
     <div id="boutonProfil">
         <div>
             <form action="MonProfilServlet" method="post">
-                <input type="button" name="modifier" value="Modifier">
+                <input type="submit" name="modifier" value="Modifier">
             </form>
         </div>
         <div>
-            <form action="WEB-INF/accueilConnected.jsp" method="get">
-                <input type="button" name="retourAccueil" value="Retour">
+            <form action="AccueilConnectedServlet" method="get">
+                <input type="submit" name="retourAccueil" value="Retour">
             </form>
         </div>
     </div>
