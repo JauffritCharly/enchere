@@ -42,15 +42,15 @@
             <input type="text" id="name" name="name">
         </div>
         <div>
-            <label for="firstName">Prenom :</label>
-            <input type="text" id="firstName" name="firstName">
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email">
         </div>
         <div>
-            <label for="phone">Telephone</label>
-            <input type="text" id="phone" name="phone">
+            <label for="rue">Rue :</label>
+            <input type="text" id="rue" name="rue">
         </div>
         <div>
-            <label for="postalCode">Code Postale :</label>
+            <label for="city">Villes : </label>
             <input type="text" id="postalCode" name="postalCode">
         </div>
         <div>
