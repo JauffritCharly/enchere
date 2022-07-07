@@ -39,7 +39,7 @@ public class MethodSQL {
             PreparedStatement pstmt1 = connection.prepareStatement("SELECT no_utilisateur,pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit FROM utilisateurs WHERE pseudo = ?");
             pstmt1.setString(1, pseudo);
             ResultSet rs = pstmt1.executeQuery();
-
+            System.out.println(pstmt1);
             while (rs.next()) {
                 int idUtilisateur = rs.getInt("no_utilisateur");
                 String pseudoUtilisateur = rs.getString("pseudo");
