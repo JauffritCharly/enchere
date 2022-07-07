@@ -3,12 +3,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Perso ###
 src/main/webapp/META-INF/context.xml
 out
 target
 .idea
 *.class
-.gitignore
 .pom
 
 ### IntelliJ IDEA ###
