@@ -1,0 +1,18 @@
+#profil {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+}
+
+#boutonProfil {
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.caseProfil {
+    display: flex;
+    justify-content: space-between;
+}
+
