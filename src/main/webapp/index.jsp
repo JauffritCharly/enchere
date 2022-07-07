@@ -1,38 +1,46 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UT
-
-    <meta name=" viewport
-    "
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Accueil</title>
+    <title>Encheres</title>
 </head>
 <body>
+<header>
+    <!--  !!!!!!!!!!
+    if(.....==true){
+    <%@include file="fragments/headerInviteFragment.jsp" %>
+    }else{
+    <%@include file="fragments/headerConnectedFragment.jsp" %>
+    }
+    !!!!!!!!!!!!!! -->
+    <h1>Liste des enchères</h1>
+</header>
+<main>
 
-<!--  !!!!!!!!!!
-2 #Servlets
-input type password
-!!!!!!!!!!!!!! -->
+    <form action="#RechercheServlet" method="get">
 
-<form action="#AccueilServlet" method="get">
 
-    <label for="saisieIdentifiant"> Identifiant :</label>
-    <input type="email" name="saisieIdentifiant" id="saisieIdentifiant">
-    <label for="saisiePassword">Mot de Passe : </label>
-    <!--  !!!!!!!!!!input type password!!!!!!!!!!!!!! -->
-    <input type="password" name="saisiePassword" id="saisiePassword">
-    <input type="submit" value="Connexion">
-    <input type="checkbox" name="rememberMe" id="rememberMe">
-    <label for="rememberMe">Se souvenir de moi</label>
-    <a href="#Servlet">Mot de passe oublié</a>
+        <label for="rechercheArticle"> Filtres : :</label>
+        <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">
 
-    <input type="submit" value="Créer un compte">
+        <label for="rechercheArticle"> Filtres : :</label>
+        <select name="rechercheArticle" id="rechercheArticle">
+            <option value="">Toutes</option>
+            <option value="1">Informatique</option>
+            <option value="2">Ameublement</option>
+            <option value="3">Vêtement</option>
+            <option value="4">Sport&Loisirs</option>
+        </select>
+        <option value=""></option>
+        <input type="submit" value="Rechercher">
+    </form>
 
-</form>
+</main>
 
 </body>
 </html>
