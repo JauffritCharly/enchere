@@ -15,7 +15,7 @@
     if(.....==true){
     <%@include file="fragments/headerInviteFragment.jsp" %>
     }else{
-    <%@include file="fragments/headerConnectedFragment.jsp" %>
+    <%@include file="WEB-INF/headerConnectedFragment.jsp" %>
     }
     !!!!!!!!!!!!!! -->
     <jsp:include page="fragments/headerInviteFragment.jsp"></jsp:include>
@@ -28,15 +28,14 @@
 
         <label for="rechercheArticle"> Filtres :</label>
         <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">
-        <label for="categorie"> Filtres :</label>
+        <label for="categorie"> Catégorie :</label>
         <select name="categorie : " id="categorie">
-            <option value="">Toutes</option>
+            <option value="0" selected>Toutes</option>
             <option value="1">Informatique</option>
             <option value="2">Ameublement</option>
             <option value="3">Vêtement</option>
             <option value="4">Sport&Loisirs</option>
         </select>
-        <option value=""></option>
         <input type="submit" value="Rechercher">
     </form>
 

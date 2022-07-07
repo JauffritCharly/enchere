@@ -11,7 +11,8 @@
 </head>
 <body>
 <header>
-    <h1>Liste des enchères Connecté</h1>
+    <jsp:include page="headerConnectedFragment.jsp"></jsp:include>
+    <h1>Liste des enchères - Connecté</h1>
 </header>
 <main>
 
@@ -20,9 +21,9 @@
     <form action="#RechercheServlet" method="get">
         <label for="rechercheArticle"> Filtres :</label>
         <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">
-        <label for="categorie"> Filtres :</label>
+        <label for="categorie"> Catégorie :</label>
         <select name="categorie : " id="categorie">
-            <option value="">Toutes</option>
+            <option value="0" selected>Toutes</option>
             <option value="1">Informatique</option>
             <option value="2">Ameublement</option>
             <option value="3">Vêtement</option>
@@ -31,6 +32,8 @@
         <option value=""></option>
         <input type="submit" value="Rechercher">
     </form>
+
+
 
 </main>
 
