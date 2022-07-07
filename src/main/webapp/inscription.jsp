@@ -42,8 +42,8 @@
             <input type="text" id="name" name="name">
         </div>
         <div>
-            <label for="firstName">Prenom :</label>
-            <input type="text" id="firstName" name="firstName">
+            <label for="firstName">Email :</label>
+            <input type="email" id="email" name="email">
         </div>
         <div>
             <label for="phone">Telephone</label>
