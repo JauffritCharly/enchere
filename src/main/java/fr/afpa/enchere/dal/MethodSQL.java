@@ -71,23 +71,19 @@ public class MethodSQL {
             pstmt.setString(1, pseudo);
             pstmt.setString(2, motDePasse);
             ResultSet rs = pstmt.executeQuery();
-
+            System.out.println(pstmt);
             while (rs.next()) {
 
                 idUtilisateur = rs.getInt("no_utilisateur");
 
             }
-
+            System.out.println(idUtilisateur);
 
             connection.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        if (idUtilisateur != 0) {
-            return true;
+        return idUtilisateur != 0;
 
-        } else {
-            return false;
-        }
     }
 }

@@ -13,11 +13,31 @@ public class ConnectionInscriptionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("login")) {
+                System.out.println(cookie.getValue());
+                request.setAttribute("login", cookie.getValue());
+            }
+        }
+
         String saisieIdentifiant = request.getParameter("saisieIdentifiant");
-        String password = request.getParameter("password");
+        String password = request.getParameter("saisiePassword");
+        System.out.println(password);
         MethodSQL methodSQL = new MethodSQL();
         boolean connexion = methodSQL.connexion(saisieIdentifiant, password);
+        System.out.println(connexion);
 
+        if (connexion) {
+            Cookie connexionCookie = new Cookie("login", saisieIdentifiant);
+            response.addCookie(connexionCookie);
+            request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
+
+        } else {
+            request.getRequestDispatcher("WEB-INF/pasbon.jsp").forward(request, response);
+        }
+        Cookie connexionCookie = new Cookie("login", saisieIdentifiant);
+        response.addCookie(connexionCookie);
 
     }
 

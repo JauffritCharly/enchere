@@ -19,9 +19,8 @@ input type password
 <form action="ConnectionInscriptionServlet" method="get">
 
     <label for="saisieIdentifiant"> Identifiant :</label>
-    <input type="email" name="saisieIdentifiant" id="saisieIdentifiant">
+    <input type="text" name="saisieIdentifiant" id="saisieIdentifiant" value="${login}">
     <label for="saisiePassword">Mot de Passe : </label>
-    <!--  !!!!!!!!!!input type password!!!!!!!!!!!!!! -->
     <input type="password" name="saisiePassword" id="saisiePassword">
     <input type="submit" value="Connexion">
     <input type="checkbox" name="rememberMe" id="rememberMe">
