@@ -14,44 +14,46 @@
     <div id="profil">
         <div class="caseProfil">
             <p>Pseudo</p>
-            <input type="text" name="pseudo" disabled>
+            <input type="text" name="pseudo" value="${utilisateur.pseudo}" disabled >
         </div>
         <div class="caseProfil">
             <p>Nom</p>
-            <input type="text" name="nom" disabled>
+            <input type="text" name="nom" value="${utilisateur.nom}" disabled>
         </div>
         <div class="caseProfil">
             <p>Prénom</p>
-            <input type="text" name="prénom" disabled>
+            <input type="text" name="prénom" value="${utilisateur.prenom}" disabled>
         </div>
         <div class="caseProfil">
             <p>Email</p>
-            <input type="text" name="email" disabled>
+            <input type="text" name="email" value="${utilisateur.email}" disabled>
         </div>
         <div class="caseProfil">
             <p>Téléphone</p>
-            <input type="text" name="telephone" disabled>
+            <input type="text" name="telephone" value="${utilisateur.telephone}" disabled>
         </div>
         <div class="caseProfil">
             <p>Rue</p>
-            <input type="text" name="rue" disabled>
+            <input type="text" name="rue" value="${utilisateur.rue}" disabled>
         </div>
         <div class="caseProfil">
             <p>Code postal</p>
-            <input type="text" name="codePostal" disabled>
+            <input type="text" name="codePostal" value="${utilisateur.codePostal}" disabled>
         </div>
         <div class="caseProfil">
             <p>Ville</p>
-            <input type="text" name="ville" disabled>
+            <input type="text" name="ville" value="${utilisateur.ville}" disabled>
         </div>
     </div>
     <div id="boutonProfil">
         <div>
-            <a href="modifierMonProfil">Modifier</a>
+            <form action="MonProfilServlet" method="post">
+                <input type="submit" name="modifier" value="Modifier">
+            </form>
         </div>
         <div>
-            <form action="/enchere/AccueilBis" method="get">
-                <input type="button" name="retourAccueil" value="Retour">
+            <form action="AccueilConnectedServlet" method="get">
+                <input type="submit" name="retourAccueil" value="Retour">
             </form>
         </div>
     </div>

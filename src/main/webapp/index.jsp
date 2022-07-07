@@ -18,8 +18,7 @@
     <%@include file="fragments/headerConnectedFragment.jsp" %>
     } <jsp:include page="fragments/headerInviteFragment.jsp"></jsp:include>
     !!!!!!!!!!!!!! -->
-    <a href="inscription.jsp">S'inscrire</a> -
-    <a href="../WEB-INF/connexion.jsp">Se connecter</a>
+    <jsp:include page="fragments/headerInviteFragment.jsp"></jsp:include>
     <h1>Liste des enchères Invité</h1>
 </header>
 <main>
