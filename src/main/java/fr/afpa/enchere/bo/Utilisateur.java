@@ -12,7 +12,8 @@ public class Utilisateur {
     private String email;
     private String telephone;
     private String rue;
-    private int ville;
+    private String codePostal;
+    private String ville;
     private String motDePasse;
     private int credit;
     private boolean administrateur;
