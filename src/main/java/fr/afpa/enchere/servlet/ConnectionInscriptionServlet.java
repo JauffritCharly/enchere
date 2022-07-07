@@ -13,6 +13,10 @@ public class ConnectionInscriptionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String saisieIdentifiant = request.getParameter("saisieIdentifiant");
+        String password = request.getParameter("password");
+        MethodSQL methodSQL = new MethodSQL();
+        boolean connexion = methodSQL.connexion(saisieIdentifiant, password);
 
 
     }

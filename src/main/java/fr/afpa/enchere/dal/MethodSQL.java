@@ -36,7 +36,8 @@ public class MethodSQL {
         Utilisateur utilisateur = null;
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt1 = connection.prepareStatement("SELECT no_utilisateur,pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit FROM utilisateurs");
+            PreparedStatement pstmt1 = connection.prepareStatement("SELECT no_utilisateur,pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit FROM utilisateurs WHERE pseudo = ?");
+            pstmt1.setString(1, pseudo);
             ResultSet rs = pstmt1.executeQuery();
 
             while (rs.next()) {
@@ -60,5 +61,33 @@ public class MethodSQL {
             System.out.println(e.getMessage());
         }
         return utilisateur;
+    }
+
+    public boolean connexion(String pseudo, String motDePasse) {
+        int idUtilisateur = 0;
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("Select no_utilisateur from utilisateurs where pseudo = ? and mot_de_passe = ?;");
+            pstmt.setString(1, pseudo);
+            pstmt.setString(2, motDePasse);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+
+                idUtilisateur = rs.getInt("no_utilisateur");
+
+            }
+
+
+            connection.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        if (idUtilisateur != 0) {
+            return true;
+
+        } else {
+            return false;
+        }
     }
 }
