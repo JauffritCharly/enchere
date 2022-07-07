@@ -3,6 +3,14 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+src/main/webapp/META-INF/context.xml
+out
+target
+.idea
+*.class
+.gitignore
+.pom
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -36,9 +44,3 @@ build/
 
 ### Mac OS ###
 .DS_Store
-
-src/main/webapp/META-INF/context.xml
-out
-target
-.idea
-*.class
