@@ -15,9 +15,9 @@
 </header>
 <main>
 
+
+
     <form action="#RechercheServlet" method="get">
-
-
         <label for="rechercheArticle"> Filtres :</label>
         <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">
         <label for="categorie"> Filtres :</label>
