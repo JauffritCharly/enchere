@@ -79,7 +79,9 @@
                 <input type="text" name="credit" disabled>
             </div>
             <div id="bouton">
-                <input type="submit" value="Enregistrer">
+                <form action="MiseAJourProfilServlet" method="get">
+                    <input type="submit" value="Enregistrer">
+                </form>
                 <input type="submit" value="Supprimer mon compte">
             </div>
         </form>

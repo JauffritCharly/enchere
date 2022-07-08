@@ -86,4 +86,57 @@ public class MethodSQL {
         return idUtilisateur != 0;
 
     }
-}
+
+    public void miseAJourProfil(Utilisateur utilisateur) {
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("update utilisteurs set pseudo = ?,nom = ?,prenom = ?,email = ?,telephone = ?,rue = ?,code_postal = ?,ville = ?,mot_de_passe = ? where no_utilisateur = ?;");
+            pstmt.setString(1, utilisateur.getPseudo());
+            pstmt.setString(2, utilisateur.getNom());
+            pstmt.setString(3, utilisateur.getPrenom());
+            pstmt.setString(4, utilisateur.getEmail());
+            pstmt.setString(5, utilisateur.getTelephone());
+            pstmt.setString(6, utilisateur.getRue());
+            pstmt.setString(7, utilisateur.getCodePostal());
+            pstmt.setString(8, utilisateur.getVille());
+            pstmt.setString(9, utilisateur.getMotDePasse());
+            ResultSet rs = pstmt.executeQuery();
+
+            System.out.println(pstmt);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        }
+
+    public Utilisateur affichageMonProfil(int id) {
+        int no_utilisateur =0;
+        Utilisateur utilisateur = null;
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt1 = connection.prepareStatement("SELECT pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit FROM utilisateurs WHERE no_utilisateur = ?");
+            pstmt1.setInt(1, id);
+            ResultSet rs = pstmt1.executeQuery();
+            System.out.println(pstmt1);
+            while (rs.next()) {
+                String pseudoUtilisateur = rs.getString("pseudo");
+                String nomUtilisateur = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                String email = rs.getString("email");
+                String telephone = rs.getString("telephone");
+                String rue = rs.getString("rue");
+                String codePostal = rs.getString("code_postal");
+                String ville = rs.getString("ville");
+                String motDePasse = rs.getString("mot_de_passe");
+                int credit = rs.getInt("credit");
+
+                utilisateur = new Utilisateur(pseudoUtilisateur, nomUtilisateur, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit);
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return utilisateur;
+    }
+
+    }

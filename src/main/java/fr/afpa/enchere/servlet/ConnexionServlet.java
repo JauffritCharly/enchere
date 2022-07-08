@@ -46,7 +46,6 @@ public class ConnexionServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("verifconnexion", true);
             session.setAttribute("id", utilisateur.getIdUtilisateur());
-            System.out.println(session.getAttribute("id"));
             request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
 
         } else {

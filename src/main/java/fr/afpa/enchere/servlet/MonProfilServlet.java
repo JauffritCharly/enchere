@@ -12,15 +12,15 @@ import java.io.IOException;
 public class MonProfilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String pseudo = request.getParameter("pseudo");
+        HttpSession session = request.getSession();
         MethodSQL methodSQL = new MethodSQL();
-        if (pseudo != null) {
-            Utilisateur utilisateur = methodSQL.selectPseudo(pseudo);
-            System.out.println(utilisateur);
-            request.setAttribute("utilisateur", utilisateur);
-        }
+        Utilisateur utilisateur = methodSQL.affichageMonProfil((Integer) session.getAttribute("id"));
+        System.out.println(utilisateur);
+        request.setAttribute("utilisateur", utilisateur);
+
         request.getRequestDispatcher("WEB-INF/monProfil.jsp").forward(request, response);
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("WEB-INF/modifierMonProfil.jsp").forward(request, response);
