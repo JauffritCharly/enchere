@@ -9,6 +9,7 @@ out
 target
 .idea
 *.class
+src/main/java/fr/afpa/enchere/dal/ConnectionProvider.java
 
 
 ### IntelliJ IDEA ###
