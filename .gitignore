@@ -12,6 +12,14 @@ target
 src/main/java/fr/afpa/enchere/dal/ConnectionProvider.java
 
 
+### Perso ###
+src/main/webapp/META-INF/context.xml
+out
+target
+.idea
+*.class
+.gitignore
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
