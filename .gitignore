@@ -9,7 +9,8 @@ out
 target
 .idea
 *.class
-.pom
+src/main/java/fr/afpa/enchere/dal/ConnectionProvider.java
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
