@@ -11,7 +11,6 @@
 </head>
 <body>
 <header>
-    <jsp:include page="headerConnectedFragment.jsp"></jsp:include>
     <h1>Liste des enchères - Connecté</h1>
 </header>
 <main>
@@ -54,8 +53,7 @@
             <label for="ventesTerminées">ventes terminées</label>
         </fieldset>
     </form>
-
-    <jsp:useBean id="allArticles" scope="request" type=""/>
+    <!--
     <c:forEach var="article" items="${allArticles.selectAllArticleVendu}">
         <ul class="list-group col-4 offset-4">
             <li class="list-group-item text-center">
@@ -63,6 +61,7 @@
             </li>
         </ul>
     </c:forEach>
+    -->
 </main>
 
 </body>
