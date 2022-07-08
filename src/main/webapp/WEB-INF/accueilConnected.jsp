@@ -17,7 +17,6 @@
 <main>
 
 
-
     <form action="#RechercheServlet" method="get">
         <label for="rechercheArticle"> Filtres :</label>
         <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">
@@ -29,12 +28,41 @@
             <option value="3">Vêtement</option>
             <option value="4">Sport&Loisirs</option>
         </select>
-        <option value=""></option>
         <input type="submit" value="Rechercher">
+
+        <fieldset>
+            <legend><input type="radio">Achats</legend>
+
+            <input type="checkbox" id="encheresOuvertes" name="encheresOuvertes">
+            <label for="encheresOuvertes">enchères Ouvertes</label><br/>
+
+            <input type="checkbox" id="encheresEnCours" name="encheresEnCours">
+            <label for="encheresEnCours">mes enchères en cours</label><br/>
+
+            <input type="checkbox" id="encheresRemportees" name="encheresRemportees">
+            <label for="encheresRemportees">mes enchères remportées</label>
+
+            <legend><input type="radio">Ventes</legend>
+
+            <input type="checkbox" id="ventesEnCours" name="ventesEnCours">
+            <label for="ventesEnCours">mes ventes en cours</label><br/>
+
+            <input type="checkbox" id="ventesNonDebutees" name="ventesNonDebutees">
+            <label for="ventesNonDebutees">ventes non débutées</label><br/>
+
+            <input type="checkbox" id="ventesTerminées" name="ventesTerminées">
+            <label for="ventesTerminées">ventes terminées</label>
+        </fieldset>
     </form>
 
-
-
+    <jsp:useBean id="allArticles" scope="request" type=""/>
+    <c:forEach var="article" items="${allArticles.selectAllArticleVendu}">
+        <ul class="list-group col-4 offset-4">
+            <li class="list-group-item text-center">
+                <p>${article.nom}</p>
+            </li>
+        </ul>
+    </c:forEach>
 </main>
 
 </body>

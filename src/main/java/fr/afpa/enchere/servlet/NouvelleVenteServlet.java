@@ -1,6 +1,5 @@
 package fr.afpa.enchere.servlet;
 
-import fr.afpa.enchere.dal.SQLRuddy;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,15 +8,11 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "AccueilConnectedServlet", value = "/AccueilConnectedServlet")
-public class AccueilConnectedServlet extends HttpServlet {
+@WebServlet(name = "NouvelleVenteServlet", value = "/NouvelleVenteServlet")
+public class NouvelleVenteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        SQLRuddy allArticles = new SQLRuddy();
-        request.setAttribute("allArticles", allArticles.selectAllArticleVendu());
-        request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
-
+        request.getRequestDispatcher("WEB-INF/nouvelleVente.jsp").forward(request, response);
     }
 
     @Override
