@@ -9,7 +9,7 @@ out
 target
 .idea
 *.class
-.pom
+
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
