@@ -11,14 +11,8 @@
 </head>
 <body>
 <header>
-    <!--  !!!!!!!!!!
-    if(.....==true){
-    <%@include file="fragments/headerInviteFragment.jsp" %>
-    }else{
-    <%@include file="fragments/headerConnectedFragment.jsp" %>
-    } <jsp:include page="fragments/headerInviteFragment.jsp"></jsp:include>
-    !!!!!!!!!!!!!! -->
-    <jsp:include page="fragments/headerInviteFragment.jsp"></jsp:include>
+    <a href="InscriptionServlet">S'inscrire</a> -
+    <a href="ConnexionServlet">Se connecter</a>
     <h1>Liste des enchères Invité</h1>
 </header>
 <main>

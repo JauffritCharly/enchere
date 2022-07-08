@@ -17,7 +17,7 @@ public abstract class ConnectionProvider {
         Context context;
         try {
             context = new InitialContext();
-            ConnectionProvider.dataSource = (DataSource) context.lookup("java:comp/env/jdbc/base_accounts");
+            ConnectionProvider.dataSource = (DataSource) context.lookup("java:comp/env/jdbc/enchere");
         } catch (NamingException e) {
             e.printStackTrace();
             throw new RuntimeException("Impossible d'accéder à la base de données");

@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>Inscription Profil :</h1>
-<form action="ConnectionInscriptionServlet" method="post">
+<form action="InscriptionServlet" method="post">
     <div class="formulaireInscription">
         <div>
             <div>

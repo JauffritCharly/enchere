@@ -16,7 +16,7 @@
 input type password
 !!!!!!!!!!!!!! -->
 
-<form action="ConnectionInscriptionServlet" method="get">
+<form action="ConnexionServlet" method="post">
 
     <label for="saisieIdentifiant"> Identifiant :</label>
     <input type="text" name="saisieIdentifiant" id="saisieIdentifiant" value="${login}">
