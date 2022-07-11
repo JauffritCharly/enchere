@@ -61,6 +61,9 @@
                 <input type="submit" value="Enregistrer la modification">
             </div>
         </form>
+        <form action="MiseAJourProfilServlet" method="post">
+            <input type="submit" value="Supprimer le compte">
+        </form>
     </div>
 </div>
 </body>
