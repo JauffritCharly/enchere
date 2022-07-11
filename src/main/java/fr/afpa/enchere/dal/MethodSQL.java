@@ -2,7 +2,6 @@ package fr.afpa.enchere.dal;
 
 import fr.afpa.enchere.bo.Utilisateur;
 
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -87,27 +86,6 @@ public class MethodSQL {
 
     }
 
-    public void miseAJourProfil(Utilisateur utilisateur) {
-        try {
-            Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("update utilisteurs set pseudo = ?,nom = ?,prenom = ?,email = ?,telephone = ?,rue = ?,code_postal = ?,ville = ?,mot_de_passe = ? where no_utilisateur = ?;");
-            pstmt.setString(1, utilisateur.getPseudo());
-            pstmt.setString(2, utilisateur.getNom());
-            pstmt.setString(3, utilisateur.getPrenom());
-            pstmt.setString(4, utilisateur.getEmail());
-            pstmt.setString(5, utilisateur.getTelephone());
-            pstmt.setString(6, utilisateur.getRue());
-            pstmt.setString(7, utilisateur.getCodePostal());
-            pstmt.setString(8, utilisateur.getVille());
-            pstmt.setString(9, utilisateur.getMotDePasse());
-            ResultSet rs = pstmt.executeQuery();
-
-            System.out.println(pstmt);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        }
-
     public Utilisateur affichageMonProfil(int id) {
         int no_utilisateur =0;
         Utilisateur utilisateur = null;
@@ -137,6 +115,29 @@ public class MethodSQL {
             System.out.println(e.getMessage());
         }
         return utilisateur;
+    }
+
+    public void miseAJourProfil(int no_utilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse) {
+        //Cette methode sert à modifier le profil
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("UPDATE pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ? From utilisateurs where no_utilisateur = ?");
+            pstmt.setString(1, pseudo);
+            pstmt.setString(2, nom);
+            pstmt.setString(3, prenom);
+            pstmt.setString(4, email);
+            pstmt.setString(5, telephone);
+            pstmt.setString(6, rue);
+            pstmt.setString(7, codePostal);
+            pstmt.setString(8, ville);
+            pstmt.setString(9, motDePasse);
+            pstmt.setInt(10, no_utilisateur);
+            pstmt.executeUpdate();
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     }

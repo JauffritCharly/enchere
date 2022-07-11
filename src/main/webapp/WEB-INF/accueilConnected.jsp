@@ -11,11 +11,15 @@
 </head>
 <body>
 <header>
-    <h1>Liste des enchères - Connecté</h1>
+    <a href="${pageContext.request.contextPath}/EnchereServlet">Enchere</a>
+    <a href="${pageContext.request.contextPath}/NouvelleVenteServlet">Vendre un article</a>
+    <a href="${pageContext.request.contextPath}/MonProfilServlet">Mon profil</a>
+    <a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
+
 </header>
 <main>
 
-
+    <h1>Liste des enchères - Connecté</h1>
     <form action="#RechercheServlet" method="get">
         <label for="rechercheArticle"> Filtres :</label>
         <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">

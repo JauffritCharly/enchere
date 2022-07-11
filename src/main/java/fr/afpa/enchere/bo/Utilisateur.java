@@ -17,6 +17,7 @@ public class Utilisateur {
     private String ville;
     private String motDePasse;
     private int credit;
+
     private boolean administrateur;
 
     public Utilisateur(int idUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse, int credit) {

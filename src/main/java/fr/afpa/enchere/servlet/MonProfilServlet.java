@@ -15,7 +15,6 @@ public class MonProfilServlet extends HttpServlet {
         HttpSession session = request.getSession();
         MethodSQL methodSQL = new MethodSQL();
         Utilisateur utilisateur = methodSQL.affichageMonProfil((Integer) session.getAttribute("id"));
-        System.out.println(utilisateur);
         request.setAttribute("utilisateur", utilisateur);
 
         request.getRequestDispatcher("WEB-INF/monProfil.jsp").forward(request, response);
