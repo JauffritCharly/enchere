@@ -1,0 +1,39 @@
+header {
+    background-color: rgb(35, 25, 85);
+}
+
+body {
+    background-color: rgb(31, 70, 144);
+}
+
+footer {
+    background-color: rgb(232, 170, 66);
+}
+#titre {
+    display: flex;
+    justify-content: center;
+    color: rgb(232, 170, 66);
+    font-weight: bold;
+    margin: 3%;
+
+}
+p {
+    text-decoration: underline overline rgb(232, 170, 66);
+    color: rgb(218, 234, 241);
+}
+
+#formulaire {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin: 5%;
+}
+
+#boutonProfil {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+}
+
+

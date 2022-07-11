@@ -11,6 +11,9 @@ public class Utilisateur {
     private String nom;
     private String prenom;
 
+    public Utilisateur(String pseudoUtilisateur, String nomUtilisateur, String prenom, String email, String telephone, String rue, String codePostal, String ville) {
+    }
+
     public int getIdUtilisateur() {
         return idUtilisateur;
     }
