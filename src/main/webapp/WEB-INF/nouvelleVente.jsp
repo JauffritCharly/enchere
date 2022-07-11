@@ -20,7 +20,7 @@
         <label for="descriptionSaisie">Description : </label>
         <textarea name="descriptionSaisie" id="descriptionSaisie" cols="30" rows="10"></textarea>
         <label for="categorieChoisie"> Catégorie :</label>
-        <select name="categorieChoisie : " id="categorieChoisie">
+        <select name="categorieChoisie" id="categorieChoisie">
             <option value="0" selected disabled>Toutes</option>
             <option value="1">Informatique</option>
             <option value="2">Ameublement</option>
@@ -38,7 +38,7 @@
         <p>Retrait</p>
         <label for="rueRetrait">Rue : </label>
         <input type="text" name="rueRetrait" id="rueRetrait" value="${utilisateur.getRue()}">
-        <label for=" cPRetrait">Code Postal : </label>
+        <label for="cPRetrait">Code Postal : </label>
         <input type="text" name="cPRetrait" id="cPRetrait" value="${utilisateur.codePostal}">
         <label for="villeRetrait">Ville : </label>
         <input type="text" name="villeRetrait" id="villeRetrait" value="${utilisateur.ville}">

@@ -16,6 +16,10 @@ import java.time.LocalDate;
 public class EnchereServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        MethodSQL methodSQL = new MethodSQL();
+        HttpSession session = request.getSession();
+        Utilisateur utilisateur = methodSQL.affichageMonProfil((Integer) session.getAttribute("id"));
+        request.setAttribute("utilisateur", utilisateur);
 
         request.getRequestDispatcher("WEB-INF/nouvelleVente.jsp").forward(request, response);
 

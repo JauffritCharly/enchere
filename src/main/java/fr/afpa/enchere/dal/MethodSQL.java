@@ -1,11 +1,12 @@
 package fr.afpa.enchere.dal;
 
+import fr.afpa.enchere.bo.ArticleVendu;
 import fr.afpa.enchere.bo.Utilisateur;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MethodSQL {
 
@@ -87,7 +88,7 @@ public class MethodSQL {
     }
 
     public Utilisateur affichageMonProfil(int id) {
-        int no_utilisateur =0;
+        int no_utilisateur = 0;
         Utilisateur utilisateur = null;
         try {
             Connection connection = ConnectionProvider.getConnection();
@@ -140,7 +141,7 @@ public class MethodSQL {
         }
     }
 
-    public void supprimerCompte(int no_utilisateur){
+    public void supprimerCompte(int no_utilisateur) {
         //Cette methode sert à supprimer un compte
         try {
             Connection connection = ConnectionProvider.getConnection();
