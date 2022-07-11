@@ -1,0 +1,16 @@
+.row {
+    display: inline-flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+#rechercherEnchere {
+    height: fit-content;
+}
