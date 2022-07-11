@@ -22,64 +22,43 @@
         <p>--- Mon profil ---</p>
     </div>
     <div id="champs">
-        <form action="" method="get" id="form">
-            <div id="partieGaucheForm">
+        <form action="MiseAJourProfilServlet" method="get" id="form">
+            <div>
                 <div class="case">
                     <p>Pseudo</p>
-                    <input type="text" name="pseudo">
+                    <input type="text" name="pseudo" value="${utilisateur.pseudo}">
+                </div>
+                <div class="case">
+                    <p>Nom</p>
+                    <input type="text" name="nom" value="${utilisateur.nom}">
                 </div>
                 <div class="case">
                     <p>Prénom</p>
-                    <input type="text" name="prenom">
-                </div>
-                <div class="case">
-                    <p>Téléphone</p>
-                    <input type="text" name="telephone">
-                </div>
-                <div class="case">
-                    <p>Code postal</p>
-                    <input type="text" name="codePostal">
-                </div>
-                <div class="case">
-                    <p>Mot de passe actuel</p>
-                    <input type="text" name="motDePasseActuel">
-                </div>
-                <div class="case">
-                    <p>Nouveau mot de passe</p>
-                    <input type="text" name="nouveauMotDePasse">
-                </div>
-            </div>
-            <div id="partieDroiteForm">
-                <div class="case">
-                    <p>Nom</p>
-                    <input type="text" name="nom">
+                    <input type="text" name="prenom" value="${utilisateur.prenom}">
                 </div>
                 <div class="case">
                     <p>Email</p>
-                    <input type="text" name="email">
+                    <input type="text" name="email" value="${utilisateur.email}">
+                </div>
+                <div class="case">
+                    <p>Téléphone</p>
+                    <input type="text" name="telephone" value="${utilisateur.telephone}">
                 </div>
                 <div class="case">
                     <p>Rue</p>
-                    <input type="text" name="rue">
+                    <input type="text" name="rue" value="${utilisateur.rue}">
+                </div>
+                <div class="case">
+                    <p>Code postal</p>
+                    <input type="text" name="code_postal" value="${utilisateur.codePostal}">
                 </div>
                 <div class="case">
                     <p>Ville</p>
-                    <input type="text" name="ville">
+                    <input type="text" name="ville" value="${utilisateur.ville}">
                 </div>
-                <div class="case">
-                    <br>
-                </div>
-                <div class="case">
-                    <p>Confirmation</p>
-                    <input type="text" name="confirmation">
-                </div>
-            </div>
-            <div id="credit">
-                <p>Crédit</p>
-                <input type="text" name="credit" disabled>
             </div>
             <div id="bouton">
-                    <input type="submit" value="Enregistrer la modification">
+                <input type="submit" value="Enregistrer la modification">
             </div>
         </form>
     </div>

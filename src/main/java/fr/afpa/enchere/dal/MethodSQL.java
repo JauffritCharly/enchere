@@ -121,7 +121,7 @@ public class MethodSQL {
         //Cette methode sert à modifier le profil
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt = connection.prepareStatement("UPDATE pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ? From utilisateurs where no_utilisateur = ?");
+            PreparedStatement pstmt = connection.prepareStatement("UPDATE utilisateurs set pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ? where no_utilisateur = ?");
             pstmt.setString(1, pseudo);
             pstmt.setString(2, nom);
             pstmt.setString(3, prenom);
@@ -130,9 +130,9 @@ public class MethodSQL {
             pstmt.setString(6, rue);
             pstmt.setString(7, codePostal);
             pstmt.setString(8, ville);
-            pstmt.setString(9, motDePasse);
-            pstmt.setInt(10, no_utilisateur);
+            pstmt.setInt(9, no_utilisateur);
             pstmt.executeUpdate();
+            System.out.println(pstmt);
             connection.close();
 
         } catch (SQLException e) {

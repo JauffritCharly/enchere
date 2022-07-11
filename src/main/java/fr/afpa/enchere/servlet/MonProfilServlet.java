@@ -22,6 +22,11 @@ public class MonProfilServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        MethodSQL methodSQL = new MethodSQL();
+        Utilisateur utilisateur = methodSQL.affichageMonProfil((Integer) session.getAttribute("id"));
+        request.setAttribute("utilisateur", utilisateur);
+
         request.getRequestDispatcher("WEB-INF/modifierMonProfil.jsp").forward(request, response);
     }
 }
