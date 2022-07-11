@@ -140,4 +140,18 @@ public class MethodSQL {
         }
     }
 
+    public void supprimerCompte(int no_utilisateur){
+        //Cette methode sert à supprimer un compte
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("DELETE FROM utilisateurs where no_utilisateur = ?");
+            pstmt.setInt(1, no_utilisateur);
+            pstmt.executeUpdate();
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     }

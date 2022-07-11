@@ -27,14 +27,21 @@ public class MiseAJourProfilServlet extends HttpServlet {
         String code_postal = request.getParameter("code_postal");
         String ville = request.getParameter("ville");
         String mot_de_passe = request.getParameter("mot_de_passe");
-        methodSQL.miseAJourProfil(no_utilisateur,pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe);
+        methodSQL.miseAJourProfil(no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe);
 
         request.setAttribute("utilisateur", utilisateur);
-        request.getRequestDispatcher("WEB-INF/monProfil.jsp").forward(request, response);
+        request.getRequestDispatcher("AccueilConnectedServlet").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        MethodSQL methodSQL = new MethodSQL();
 
+        int id = (int) session.getAttribute("id");
+        int no_utilisateur = id;
+        methodSQL.supprimerCompte((no_utilisateur));
+
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }
