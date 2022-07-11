@@ -1,11 +1,12 @@
 package fr.afpa.enchere.dal;
 
+import fr.afpa.enchere.bo.ArticleVendu;
 import fr.afpa.enchere.bo.Utilisateur;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MethodSQL {
 
@@ -87,7 +88,7 @@ public class MethodSQL {
     }
 
     public Utilisateur affichageMonProfil(int id) {
-        int no_utilisateur =0;
+        int no_utilisateur = 0;
         Utilisateur utilisateur = null;
         try {
             Connection connection = ConnectionProvider.getConnection();
@@ -140,4 +141,43 @@ public class MethodSQL {
         }
     }
 
+    public void insertNouvelleVente(String nom_article, String description, int prix_initial, LocalDate date_debut_encheres, LocalDate date_fin_encheres, int no_utilisateur, int no_categorie) {
+        //Cette methode sert a inserer un utilisateur dans la BDD
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = connection.prepareStatement("INSERT INTO articles_vendus (nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, no_utilisateur, no_categorie)" + " values(?,?,?,?,?,?,?);");
+            pstmt.setString(1, nom_article);
+            pstmt.setString(2, description);
+            pstmt.setDate(3, Date.valueOf(date_debut_encheres));
+            pstmt.setDate(4, Date.valueOf(date_fin_encheres));
+            pstmt.setInt(5, prix_initial);
+            pstmt.setInt(6, no_utilisateur);
+            pstmt.setInt(7, no_categorie);
+            pstmt.executeUpdate();
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
+
+
+    // ----------------------A MODIFIER LE SELECT ALL AVEC UN WHERE --------------------------------------
+    public List<ArticleVendu> selectAllArticleVendu() {
+        //Cette methode sert à afficher toutes les enchères dans la BDD
+        List<ArticleVendu> listeArticles = new ArrayList<>();
+        try (Connection connection = ConnectionProvider.getConnection()) {
+            PreparedStatement pstmt = connection.prepareStatement("SELECT no_encheres, no_utilisateur, no_article, date_enchere, montant_enchere FROM encheres");
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                listeArticles.add(new ArticleVendu(rs.getInt("noArticle"), rs.getString("nomArticle"), rs.getString("description"), rs.getDate("dateDebutEncheres"), rs.getDate("dateFinEncheres"), rs.getInt("prixInitial"), rs.getInt("prixVente")));
+            }
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return listeArticles;
+    }
+
+
+}

@@ -14,15 +14,14 @@
 
 <main>
     <h1>Nouvelle Vente</h1>
-    <form id="form1" action="NouvelleVenteServlet" method="get">
+    <form id="form1" action="EnchereServlet" method="post">
         <label for="saisieArticle"> Article :</label>
         <input type="" name="saisieArticle" id="saisieArticle" value="${article}">
         <label for="descriptionSaisie">Description : </label>
         <textarea name="descriptionSaisie" id="descriptionSaisie" cols="30" rows="10"></textarea>
-        <input type="text" name="descriptionSaisie" id="descriptionSaisie">
         <label for="categorieChoisie"> Catégorie :</label>
         <select name="categorieChoisie : " id="categorieChoisie">
-            <option value="0" selected>Toutes</option>
+            <option value="0" selected disabled>Toutes</option>
             <option value="1">Informatique</option>
             <option value="2">Ameublement</option>
             <option value="3">Vêtement</option>
@@ -34,15 +33,15 @@
         <input type="number" name="prixSaisie" id="prixSaisie">
         <label for="debutEnchereSaisie">Début de l'enchère : </label>
         <input type="date" name="debutEnchereSaisie" id="debutEnchereSaisie">
-        <label for="finEnchereSaisie">Début de l'enchère : </label>
+        <label for="finEnchereSaisie">Fin de l'enchère : </label>
         <input type="date" name="finEnchereSaisie" id="finEnchereSaisie">
         <p>Retrait</p>
         <label for="rueRetrait">Rue : </label>
-        <input type="text" name="rueRetrait" id="rueRetrait" value="${rueRetrait}">
-        <label for="cPRetrait">Mise à prix : </label>
-        <input type="text" name="cPRetrait" id="cPRetrait" value="${cPRetrait}">
-        <label for="villeRetrait">Mise à prix : </label>
-        <input type="text" name="villeRetrait" id="villeRetrait" value="${villeRetrait}">
+        <input type="text" name="rueRetrait" id="rueRetrait" value="${utilisateur.getRue()}">
+        <label for=" cPRetrait">Code Postal : </label>
+        <input type="text" name="cPRetrait" id="cPRetrait" value="${utilisateur.codePostal}">
+        <label for="villeRetrait">Ville : </label>
+        <input type="text" name="villeRetrait" id="villeRetrait" value="${utilisateur.ville}">
 
         <input type="submit" value="Enregistrer">
         <input type="reset" value="Annuler">
