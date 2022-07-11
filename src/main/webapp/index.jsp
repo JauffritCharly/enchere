@@ -33,7 +33,20 @@
         <option value=""></option>
         <input type="submit" value="Rechercher">
     </form>
-
+    <c:forEach var="article" items="${affichageArticle}">
+        <div>
+            <h2>${article.nomArticle}</h2>
+        </div>
+        <div>
+            <p>Prix : ${article.prixInitial}</p>
+        </div>
+        <div>
+            <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
+        </div>
+        <div>
+            <p>Vendeur : ${article.pseudo}</p>
+        </div>
+    </c:forEach>
 </main>
 
 </body>

@@ -30,8 +30,7 @@ public class InscriptionServlet extends HttpServlet {
         String mot_de_passe = request.getParameter("password");
         String confirmationmdp = request.getParameter("confirmationmdp");
         methodSQl.insertNouvelleConnection(pseudo, nom, prenom, email, telephone, rue, codePostale, ville, mot_de_passe);
-        System.out.println(mot_de_passe);
-        System.out.println(confirmationmdp);
+
 
         if (mot_de_passe.equals(confirmationmdp)) {
             request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);

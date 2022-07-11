@@ -18,7 +18,10 @@ public class ArticleVendu {
     private LocalDate dateFinEncheres;
     private int prixInitial;
     private int prixVente;
+
+    private String pseudo;
     private ArrayList<ArticleVendu> articleVendu;
+
 
     public ArticleVendu(int noArticle, String nomArticle, String description, LocalDate dateDebutEncheres, LocalDate dateFinEncheres, int prixInitial, int prixVente) {
         this.noArticle = noArticle;
@@ -32,4 +35,19 @@ public class ArticleVendu {
 
     public ArticleVendu(int noArticle, String nomArticle, String description, Date dateDebutEncheres, Date dateFinEncheres, int prixInitial, int prixVente) {
     }
+
+    private Date dateDebutEncheres1;
+    private Date dateFinEncheres1;
+
+    public ArticleVendu(String nomArticle, String description, Date dateDebutEncheres1, Date dateFinEncheres1, int prixInitial, int prixVente, String pseudo) {
+        this.nomArticle = nomArticle;
+        this.description = description;
+        this.dateDebutEncheres1 = dateDebutEncheres1;
+        this.dateFinEncheres1 = dateFinEncheres1;
+        this.prixInitial = prixInitial;
+        this.prixVente = prixVente;
+        this.pseudo = pseudo;
+    }
+
+
 }

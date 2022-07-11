@@ -95,7 +95,6 @@ public class MethodSQL {
             PreparedStatement pstmt1 = connection.prepareStatement("SELECT pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit FROM utilisateurs WHERE no_utilisateur = ?");
             pstmt1.setInt(1, id);
             ResultSet rs = pstmt1.executeQuery();
-            System.out.println(pstmt1);
             while (rs.next()) {
                 String pseudoUtilisateur = rs.getString("pseudo");
                 String nomUtilisateur = rs.getString("nom");
@@ -116,6 +115,34 @@ public class MethodSQL {
             System.out.println(e.getMessage());
         }
         return utilisateur;
+    }
+
+    public ArrayList<ArticleVendu> affichageArticlePageAcceuil() {
+        ArrayList<ArticleVendu> affichageArticles = new ArrayList<>();
+
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt1 = connection.prepareStatement("SELECT nom_article,description,date_debut_encheres,date_fin_encheres, prix_initial,prix_vente, pseudo FROM articles_vendus inner join utilisateurs  on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur order by no_article desc limit 2");
+            ResultSet rs = pstmt1.executeQuery();
+
+            while (rs.next()) {
+                ArticleVendu articleVendu = new ArticleVendu(
+                        rs.getString("nom_article"),
+                        rs.getString("description"),
+                        rs.getDate("date_debut_encheres"),
+                        rs.getDate("date_fin_encheres"),
+                        rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"),
+                        rs.getString("pseudo")
+                );
+                affichageArticles.add(articleVendu);
+            }
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return affichageArticles;
     }
 
     public void miseAJourProfil(int no_utilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse) {
@@ -168,6 +195,7 @@ public class MethodSQL {
             pstmt.setInt(6, no_utilisateur);
             pstmt.setInt(7, no_categorie);
             pstmt.executeUpdate();
+
             connection.close();
 
         } catch (SQLException e) {
@@ -176,6 +204,8 @@ public class MethodSQL {
     }
 
 
+
+/*
     // ----------------------A MODIFIER LE SELECT ALL AVEC UN WHERE --------------------------------------
     public List<ArticleVendu> selectAllArticleVendu() {
         //Cette methode sert à afficher toutes les enchères dans la BDD
@@ -192,6 +222,6 @@ public class MethodSQL {
         }
         return listeArticles;
     }
-
+*/
 
 }

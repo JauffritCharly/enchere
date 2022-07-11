@@ -83,7 +83,7 @@
         <input type="submit" value="Rechercher" id="rechercherEnchere">
     </form>
     <!--
-    <c:forEach var="article" items="${allArticles.selectAllArticleVendu}">
+    <c:forEach var="article" items="${allArticles}">
         <ul class="list-group col-4 offset-4">
             <li class="list-group-item text-center">
                 <p>${article.nom}</p>
