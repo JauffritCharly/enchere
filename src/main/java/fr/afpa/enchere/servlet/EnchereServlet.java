@@ -30,16 +30,15 @@ public class EnchereServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MethodSQL methodSQL = new MethodSQL();
         HttpSession session = request.getSession();
-        Utilisateur utilisateur = methodSQL.affichageMonProfil((Integer) session.getAttribute("id"));
-        request.setAttribute("utilisateur", utilisateur);
+
 
         String nomArticle = request.getParameter("saisieArticle");
         String description = request.getParameter("descriptionSaisie");
         int prix = Integer.parseInt(request.getParameter("prixSaisie"));
         LocalDate dateDebut = LocalDate.parse(request.getParameter("debutEnchereSaisie"));
         LocalDate dateFin = LocalDate.parse(request.getParameter("finEnchereSaisie"));
-
         int categorieChoisie = Integer.parseInt(request.getParameter("categorieChoisie"));
+        
         methodSQL.insertNouvelleVente(nomArticle, description, prix, dateDebut, dateFin, (Integer) session.getAttribute("id"), categorieChoisie);
 
 
