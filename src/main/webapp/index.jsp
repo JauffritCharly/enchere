@@ -8,59 +8,69 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="stylePageacceuil.css">
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <title>Encheres</title>
 </head>
 <body>
 <header>
     <div class="connection">
         <div class="lien">
-            <a href="InscriptionServlet">S'inscrire</a>
+            <a href="InscriptionServlet">S'inscrire </a>
         </div>
         <div class="lien">
-            <a href="ConnexionServlet">Se connecter</a>
+            <a href="ConnexionServlet"> Se connecter</a>
         </div>
     </div>
     <div class="enTete">
-        <div>
-            <img class="logo" src="img/logo-g9fe0fcf63_1280-removebg-preview.png" alt="">
+        <div class="titre  animate__animated animate__bounce">
+            <h1>Interenchere </h1>
+            <h2>Le meilleur site d'enchère Francais </h2>
         </div>
-        <div class="titre">
-            <h1>Bienvenue sur les enchères trop bien </h1>
+        <div class="logo">
+            <img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo">
         </div>
     </div>
 </header>
 <main>
+    <div class="">
+        <form action="#RechercheServlet" method="get" class="formeAcceuil">
+            <label for="rechercheArticle"> Filtres :</label>
+            <input type="search" name="rechercheArticle" id="rechercheArticle"
+                   placeholder="Le nom de l'article contient">
+            <label for="categorie"> Filtres :</label>
+            <select name="categorie : " id="categorie">
+                <option value="">Toutes</option>
+                <option value="1">Informatique</option>
+                <option value="2">Ameublement</option>
+                <option value="3">Vêtement</option>
+                <option value="4">Sport&Loisirs</option>
+            </select>
+            <option value=""></option>
+            <input type="submit" value="Rechercher" class="boutonrechercher">
+        </form>
+    </div>
+    <div class="touteEnchere">
+        <c:forEach var="article" items="${affichageArticle}">
+            <div class="enchere">
+                <div>
+                    <h2>${article.nomArticle}</h2>
+                </div>
+                <div>
+                    <p>Prix : ${article.prixInitial}</p>
+                </div>
+                <div>
+                    <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
+                </div>
+                <div>
+                    <p>Vendeur : ${article.pseudo}</p>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 
-    <form action="#RechercheServlet" method="get">
-
-
-        <label for="rechercheArticle"> Filtres :</label>
-        <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">
-        <label for="categorie"> Filtres :</label>
-        <select name="categorie : " id="categorie">
-            <option value="">Toutes</option>
-            <option value="1">Informatique</option>
-            <option value="2">Ameublement</option>
-            <option value="3">Vêtement</option>
-            <option value="4">Sport&Loisirs</option>
-        </select>
-        <option value=""></option>
-        <input type="submit" value="Rechercher">
-    </form>
-    <c:forEach var="article" items="${affichageArticle}">
-        <div>
-            <h2>${article.nomArticle}</h2>
-        </div>
-        <div>
-            <p>Prix : ${article.prixInitial}</p>
-        </div>
-        <div>
-            <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
-        </div>
-        <div>
-            <p>Vendeur : ${article.pseudo}</p>
-        </div>
-    </c:forEach>
 </main>
 
 </body>

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 body {
-    margin: auto;
-    background: rgb(250, 250, 213);
+    height: 100%;
+    font-family: 'Roboto';
     background: linear-gradient(142deg, rgba(250, 250, 213, 1) 0%, rgba(238, 217, 153, 1) 0%, rgba(242, 243, 244, 1) 78%);
 }
 
@@ -8,6 +11,7 @@ body {
 .connection {
     display: flex;
     justify-content: flex-end;
+    margin: 0.8em 2em;
 }
 
 .lien {
@@ -15,25 +19,96 @@ body {
 }
 
 .lien a:hover {
-    color: red;
+    color: #f3d01b;
 }
 
 .lien a {
+
+    font-family: 'Roboto';
+    font-size: 1.5em;
     color: black;
     text-decoration: none;
 }
 
 .enTete {
-    width: 100%;
+    height: 15em;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.titre {
-    width: 50%;
+    justify-content: space-between;
+    margin-left: 7em;
 }
 
 .logo {
-    width: 5em;
+    height: 10%;
+    margin-right: 20%;
 }
+
+.imgLogo {
+    width: 40em;
+    animation-name: slidRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes slidRight {
+    0% {
+        transform: translateX(100%);
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+h1 {
+    font-family: 'Lobster';
+    font-size: 8em;
+    margin-bottom: -0.1em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h2 {
+    font-family: 'Roboto';
+}
+
+
+#rechercheArticle {
+    height: 2.5em;
+    width: 15em;
+    border-radius: 0.5em;
+    border: 1px black solid;
+}
+
+#categorie {
+    height: 2.5em;
+    width: 15em;
+    border-radius: 0.5em;
+    border: 1px black solid;
+}
+
+.formeAcceuil {
+    margin-top: 12em;
+    margin-left: 4em;
+}
+
+.enchere {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 1em;
+    margin-top: 2em;
+    width: 30em;
+    background-color: wheat;
+}
+
+.touteEnchere {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 7em;
+    margin-bottom: 3em;
+}
+
+
+
