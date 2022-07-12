@@ -7,14 +7,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styleConnexion.css">
     <title>Accueil</title>
 </head>
 <body>
-
-<!--  !!!!!!!!!!
-2 #Servlets
-input type password
-!!!!!!!!!!!!!! -->
 
 <form action="ConnexionServlet" method="post">
 
@@ -25,11 +21,26 @@ input type password
     <input type="submit" value="Connexion">
     <input type="checkbox" name="rememberMe" id="rememberMe">
     <label for="rememberMe">Se souvenir de moi</label>
-    <a href="#Servlet">Mot de passe oublié</a>
+
+
+    <a class="button" href="#popup1">Mot de passe oublié</a>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Réinitialisation du mot de passe</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Nous sommes navrés d'apprendre que vous oubliez si rapidement votre mot de passe... <br>
+                Un administrateur doit valider votre demande de réinitialisation de mot de passe. <br>
+                Vous recevrez sous peu un lien vous permettant de créer un nouveau mot de passe. <br>
+                Un peu de patience, la réinitialisation peut prendre jusqu'à 24h.
+            </div>
+        </div>
+    </div>
 
     <input type="submit" value="Créer un compte">
 
 </form>
-
+<a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
 </body>
 </html>

@@ -1,4 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400&display=swap');
+
+body {
+    height: 100%;
+    font-family: 'Roboto';
+    background: linear-gradient(142deg, rgba(250, 250, 213, 1) 0%, rgba(238, 217, 153, 1) 0%, rgba(242, 243, 244, 1) 78%);
+}
+
+
+h2 {
+    font-family: 'Roboto';
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+}
+
 .formulaireInscription {
     display: flex;
+    justify-content: center;
+    text-align: end;
+    margin-top: 4em;
 
 }
+
+.formGauche {
+    margin-right: 10em;
+}
+
+.input {
+    margin: 2em;
+}
+
+.input input {
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+.inputCreer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18em;
+}
+
+.inputCreer input {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    height: 1.8em;
+    width: 10em;
+    text-align: center;
+    background-color: #ef7109;
+    box-shadow: 5px 5px 10px -2px #000000;
+    margin: 2em 4em;
+}
+
+
+.inputCreer a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    height: 1.8em;
+    width: 10em;
+    text-align: center;
+    background-color: #ef7109;
+    box-shadow: 5px 5px 10px -2px #000000;
+    margin: 2em 4em;
+}
+

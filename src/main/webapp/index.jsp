@@ -27,7 +27,7 @@
     <div class="enTete">
         <div class="titre  animate__animated animate__bounce">
             <h1>Interenchere </h1>
-            <h2>Le meilleur site d'enchère Francais </h2>
+            <h2>Le meilleur site d'enchères Français </h2>
         </div>
         <div class="logo">
             <img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo">
@@ -37,10 +37,8 @@
 <main>
     <div class="">
         <form action="#RechercheServlet" method="get" class="formeAcceuil">
-            <label for="rechercheArticle"> Filtres :</label>
-            <input type="search" name="rechercheArticle" id="rechercheArticle"
+            <input type="text" name="rechercheArticle" id="rechercheArticle"
                    placeholder="Le nom de l'article contient">
-            <label for="categorie"> Filtres :</label>
             <select name="categorie : " id="categorie">
                 <option value="">Toutes</option>
                 <option value="1">Informatique</option>

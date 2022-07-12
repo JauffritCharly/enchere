@@ -9,61 +9,62 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/styleInscription.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styleInscription.css">
+    <title>Inscription</title>
 </head>
 <body>
-<h1>Inscription Profil :</h1>
+<h2>Inscription Profil :</h2>
 <form action="InscriptionServlet" method="post">
     <div class="formulaireInscription">
-        <div>
-            <div>
+        <div class="formGauche">
+            <div class="input">
                 <label for="pseudo">Pseudo :</label>
                 <input type="text" id="pseudo" name="pseudo" value="bob">
             </div>
-            <div>
+            <div class="input">
                 <label for="firstName">Prenom :</label>
                 <input type="text" id="firstName" name="firstName">
             </div>
-            <div>
-                <label for="phone">Telephone</label>
+            <div class="input">
+                <label for="phone">Telephone :</label>
                 <input type="text" id="phone" name="phone">
             </div>
-            <div>
+            <div class="input">
                 <label for="postalCode">Code Postale :</label>
                 <input type="text" id="postalCode" name="postalCode">
             </div>
-            <div>
+            <div class="input">
                 <label for="password">Mot de passe :</label>
                 <input type="password" id="password" name="password">
             </div>
         </div>
         <div>
-            <div>
+            <div class="input">
                 <label for="name">Nom :</label>
                 <input type="text" id="name" name="name">
             </div>
-            <div>
+            <div class="input">
                 <label for="email">Email :</label>
                 <input type="email" id="email" name="email">
             </div>
-            <div>
+            <div class="input">
                 <label for="rue">Rue :</label>
                 <input type="text" id="rue" name="rue">
             </div>
-            <div>
+            <div class="input">
                 <label for="city">Ville :</label>
                 <input type="text" id="city" name="city">
             </div>
-            <div>
-                <label for="confirmationmdp">Confirmation </label>
+            <div class="input">
+                <label for="confirmationmdp">Confirmation MdP :</label>
                 <input type="password" id="confirmationmdp" name="confirmationmdp">
             </div>
         </div>
     </div>
-
-    <input type="submit" name="valider" value="CREER">
+    <div class="inputCreer">
+        <input type="submit" name="valider" value="CREER">
+        <a href="index.jsp">Annuler</a>
+    </div>
 </form>
-<a href="index.jsp">Annuler</a>
 </body>
 </html>

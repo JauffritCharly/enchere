@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 body {
-    height: 100%;
     font-family: 'Roboto';
     background: linear-gradient(142deg, rgba(250, 250, 213, 1) 0%, rgba(238, 217, 153, 1) 0%, rgba(242, 243, 244, 1) 78%);
 }
@@ -23,7 +22,6 @@ body {
 }
 
 .lien a {
-
     font-family: 'Roboto';
     font-size: 1.5em;
     color: black;
@@ -40,7 +38,7 @@ body {
 
 .logo {
     height: 10%;
-    margin-right: 20%;
+    margin-right: 16%;
 }
 
 .imgLogo {
@@ -48,6 +46,14 @@ body {
     animation-name: slidRight;
     animation-duration: 1s;
     animation-fill-mode: both;
+}
+
+.boutonrechercher {
+    height: 2.5em;
+    width: 15em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+    background-color: #ef7109;
 }
 
 @keyframes slidRight {
@@ -76,17 +82,17 @@ h2 {
 
 
 #rechercheArticle {
-    height: 2.5em;
-    width: 15em;
+    height: 3em;
+    width: 25em;
     border-radius: 0.5em;
-    border: 1px black solid;
+    border: 2px black solid;
 }
 
 #categorie {
-    height: 2.5em;
-    width: 15em;
+    height: 3.5em;
+    width: 25em;
     border-radius: 0.5em;
-    border: 1px black solid;
+    border: 2px black solid;
 }
 
 .formeAcceuil {
@@ -106,8 +112,7 @@ h2 {
 .touteEnchere {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 7em;
-    margin-bottom: 3em;
+    margin-top: 4.8em;
 }
 
 

@@ -8,47 +8,66 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nouvelle vente</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/WEB-INF/styleNouvelleVente.css">
+    <link rel="stylesheet" href="styleNouvelleVente.css">
 </head>
 <body>
 
 <main>
-    <h1>Nouvelle Vente</h1>
-    <form id="form1" action="EnchereServlet" method="post">
-        <label for="saisieArticle"> Article :</label>
-        <input type="" name="saisieArticle" id="saisieArticle" value="${article}">
-        <label for="descriptionSaisie">Description : </label>
-        <textarea name="descriptionSaisie" id="descriptionSaisie" cols="30" rows="10"></textarea>
-        <label for="categorieChoisie"> Catégorie :</label>
-        <select name="categorieChoisie" id="categorieChoisie">
-            <option value="0">Toutes</option>
-            <option value="1">Informatique</option>
-            <option value="2">Ameublement</option>
-            <option value="3">Vêtement</option>
-            <option value="4">Sport&Loisirs</option>
-        </select>
-        <label for="imageArticle">Photo de l'article : </label>
-        <input type="file" name="imageArticle" id="imageArticle">
-        <label for="prixSaisie">Mise à prix : </label>
-        <input type="number" name="prixSaisie" id="prixSaisie">
-        <label for="debutEnchereSaisie">Début de l'enchère : </label>
-        <input type="date" name="debutEnchereSaisie" id="debutEnchereSaisie">
-        <label for="finEnchereSaisie">Fin de l'enchère : </label>
-        <input type="date" name="finEnchereSaisie" id="finEnchereSaisie">
-        <p>Retrait</p>
-        <label for="rueRetrait">Rue : </label>
-        <input type="text" name="rueRetrait" id="rueRetrait" value="${utilisateur.rue}">
-        <label for="cPRetrait">Code Postal : </label>
-        <input type="text" name="cPRetrait" id="cPRetrait" value="${utilisateur.codePostal}">
-        <label for="villeRetrait">Ville : </label>
-        <input type="text" name="villeRetrait" id="villeRetrait" value="${utilisateur.ville}">
+    <div class="column">
+        <h1>Nouvelle Vente</h1>
+        <form id="form1" action="EnchereServlet" method="post">
+            <div class="row">
+                <div class="column">
+                    <label for="saisieArticle"> Article : </label>
+                    <label for="descriptionSaisie">Description : </label>
+                    <label for="categorieChoisie"> Catégorie : </label>
+                    <label for="imageArticle">Photo de l'article : </label>
+                    <label for="prixSaisie">Mise à prix : </label>
+                    <label for="debutEnchereSaisie">Début de l'enchère : </label>
+                    <label for="finEnchereSaisie">Fin de l'enchère : </label>
+                </div>
+                <div class="column">
+                    <input type="" name="saisieArticle" id="saisieArticle" required>
+                    <textarea name="descriptionSaisie" id="descriptionSaisie" required cols="30" rows="10"></textarea>
+                    <select name="categorieChoisie" id="categorieChoisie" required>
+                        <option disabled>Choisissez une catégorie</option>
+                        <option value="1">Informatique</option>
+                        <option value="2">Ameublement</option>
+                        <option value="3">Vêtement</option>
+                        <option value="4">Sport&Loisirs</option>
+                    </select>
+                    <input type="file" name="imageArticle" id="imageArticle">
+                    <input type="number" name="prixSaisie" id="prixSaisie" required>
+                    <input type="date" name="debutEnchereSaisie" id="debutEnchereSaisie" required>
+                    <input type="date" name="finEnchereSaisie" id="finEnchereSaisie" required>
+                </div>
+            </div>
 
-        <input type="submit" value="Enregistrer">
-        <input type="reset" value="Annuler">
+            <fieldset>
+                <Legend>Retrait</Legend>
+                <div class="row">
+                    <div class="column">
+                        <label for="rueRetrait">Rue : </label>
+                        <label for="cPRetrait">Code Postal : </label>
+                        <label for="villeRetrait">Ville : </label>
+                    </div>
+                    <div class="column">
 
+                        <input type="text" name="rueRetrait" id="rueRetrait" value="${utilisateur.rue}" required>
+                        <input type="text" name="cPRetrait" id="cPRetrait" value="${utilisateur.codePostal}" required>
+                        <input type="text" name="villeRetrait" id="villeRetrait" value="${utilisateur.ville}" required>
+                    </div>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Enregistrer">
+            <input type="reset" value="Reset formulaire">
+        </form>
+    </div>
+
+    <form action="AccueilConnectedServlet" method="get">
+        <input type="submit" name="retourAccueil" value="Retour">
     </form>
-
-
 </main>
 </body>
 </html>
