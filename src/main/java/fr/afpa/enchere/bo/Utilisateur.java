@@ -7,12 +7,25 @@ import lombok.Data;
 @AllArgsConstructor
 public class Utilisateur {
     private int idUtilisateur;
+
+    public Utilisateur(String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.telephone = telephone;
+        this.rue = rue;
+        this.codePostal = codePostal;
+        this.ville = ville;
+    }
+
     private String pseudo;
     private String nom;
     private String prenom;
 
     public Utilisateur(String pseudoUtilisateur, String nomUtilisateur, String prenom, String email, String telephone, String rue, String codePostal, String ville) {
     }
+
+
 
     public int getIdUtilisateur() {
         return idUtilisateur;
