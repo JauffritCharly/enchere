@@ -1,9 +1,11 @@
 package fr.afpa.enchere.servlet;
 
 import fr.afpa.enchere.dal.MethodSQL;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
@@ -33,7 +35,7 @@ public class InscriptionServlet extends HttpServlet {
 
 
         if (mot_de_passe.equals(confirmationmdp)) {
-            request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
+            request.getRequestDispatcher("index").forward(request, response);
         } else {
             request.getRequestDispatcher("WEB-INF/pasbon.jsp").forward(request, response);
         }
