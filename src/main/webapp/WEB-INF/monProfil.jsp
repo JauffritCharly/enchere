@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="monProfil.css" rel="stylesheet">
+    <link rel="stylesheet" href="monProfil.css">
     <title>Mon Profil</title>
 </head>
 <header>
@@ -14,7 +14,7 @@
 </header>
 <body>
 <div>
-    <div id="profil">
+    <div id="informations">
         <div class="caseProfil">
             <p>Pseudo</p>
             <input type="text" name="pseudo" value="${utilisateur.pseudo}" disabled >

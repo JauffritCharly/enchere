@@ -6,14 +6,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="profilUtilisateur.css">
     <title>Profil Utilisateur</title>
 </head>
 <header>
-    <h1 id="titre">Profil Utilisateur :</h1>
+    <h1>Profil Utilisateur :</h1>
 </header>
 <body>
 <div>
-    <div id="profil">
+    <div id="informations">
         <div class="caseProfil">
             <p>Nom</p>
             <input type="text" name="nom" value="${utilisateur.nom}" disabled>
