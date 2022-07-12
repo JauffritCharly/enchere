@@ -82,15 +82,21 @@
         </div>
         <input type="submit" value="Rechercher" id="rechercherEnchere">
     </form>
-    <!--
-    <c:forEach var="article" items="${allArticles}">
-        <ul class="list-group col-4 offset-4">
-            <li class="list-group-item text-center">
-                <p>${article.nom}</p>
-            </li>
-        </ul>
+    </form>
+    <c:forEach var="article" items="${affichageArticle}">
+        <div>
+            <h2>${article.nomArticle}</h2>
+        </div>
+        <div>
+            <p>Prix : ${article.prixInitial}</p>
+        </div>
+        <div>
+            <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
+        </div>
+        <div>
+            <p>Vendeur : ${article.pseudo}</p>
+        </div>
     </c:forEach>
-    -->
 </main>
 
 </body>
