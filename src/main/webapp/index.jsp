@@ -65,7 +65,7 @@
                     <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
                 </div>
                 <div>
-                    <p>Vendeur : ${article.pseudo}</p>
+                    <a href="AfficherProfilServlet?pseudo=${article.pseudo}">${article.pseudo} </a>
                 </div>
             </div>
         </c:forEach>
