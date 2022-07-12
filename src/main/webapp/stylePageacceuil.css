@@ -1,0 +1,39 @@
+body {
+    margin: auto;
+    background: rgb(250, 250, 213);
+    background: linear-gradient(142deg, rgba(250, 250, 213, 1) 0%, rgba(238, 217, 153, 1) 0%, rgba(242, 243, 244, 1) 78%);
+}
+
+
+.connection {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.lien {
+    margin-right: 10px;
+}
+
+.lien a:hover {
+    color: red;
+}
+
+.lien a {
+    color: black;
+    text-decoration: none;
+}
+
+.enTete {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre {
+    width: 50%;
+}
+
+.logo {
+    width: 5em;
+}

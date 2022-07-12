@@ -7,13 +7,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylePageacceuil.css">
     <title>Encheres</title>
 </head>
 <body>
 <header>
-    <a href="InscriptionServlet">S'inscrire</a> -
-    <a href="ConnexionServlet">Se connecter</a>
-    <h1>Liste des enchères Invité</h1>
+    <div class="connection">
+        <div class="lien">
+            <a href="InscriptionServlet">S'inscrire</a>
+        </div>
+        <div class="lien">
+            <a href="ConnexionServlet">Se connecter</a>
+        </div>
+    </div>
+    <div class="enTete">
+        <div>
+            <img class="logo" src="img/logo-g9fe0fcf63_1280-removebg-preview.png" alt="">
+        </div>
+        <div class="titre">
+            <h1>Bienvenue sur les enchères trop bien </h1>
+        </div>
+    </div>
 </header>
 <main>
 
