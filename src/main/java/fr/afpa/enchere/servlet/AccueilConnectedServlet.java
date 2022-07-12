@@ -13,8 +13,6 @@ public class AccueilConnectedServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        //SQLRuddy allArticles = new SQLRuddy();
-        //request.setAttribute("allArticles", allArticles.selectAllArticleVendu());
         request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
 
     }

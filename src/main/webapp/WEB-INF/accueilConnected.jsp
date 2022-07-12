@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-    <a href="${pageContext.request.contextPath}/#">Enchere</a>
+    <a href="${pageContext.request.contextPath}/index">Enchere</a>
     <a href="${pageContext.request.contextPath}/EnchereServlet">Vendre un article</a>
     <a href="${pageContext.request.contextPath}/MonProfilServlet">Mon profil</a>
     <a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
@@ -81,7 +81,6 @@
             </fieldset>
         </div>
         <input type="submit" value="Rechercher" id="rechercherEnchere">
-    </form>
     </form>
     <c:forEach var="article" items="${affichageArticle}">
         <div>

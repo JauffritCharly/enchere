@@ -1,5 +1,6 @@
 package fr.afpa.enchere.servlet;
 
+import fr.afpa.enchere.bo.ArticleVendu;
 import fr.afpa.enchere.bo.Utilisateur;
 import fr.afpa.enchere.dal.MethodSQL;
 import jakarta.servlet.ServletException;
@@ -7,7 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.util.ArrayList;
 
 @WebServlet("/ConnexionServlet")
 public class ConnexionServlet extends HttpServlet {
@@ -48,15 +49,8 @@ public class ConnexionServlet extends HttpServlet {
             session.setAttribute("verifconnexion", true);
             session.setAttribute("id", utilisateur.getIdUtilisateur());
 
-            String nomArticle = request.getParameter("saisieArticle");
-            String description = request.getParameter("descriptionSaisie");
-            int prix = Integer.parseInt(request.getParameter("prixSaisie"));
-            LocalDate dateDebut = LocalDate.parse(request.getParameter("debutEnchereSaisie"));
-            LocalDate dateFin = LocalDate.parse(request.getParameter("finEnchereSaisie"));
-            int categorieChoisie = Integer.parseInt(request.getParameter("categorieChoisie"));
-
-            methodSQL.insertNouvelleVente(nomArticle, description, prix, dateDebut, dateFin, (Integer) session.getAttribute("id"), categorieChoisie);
-
+            ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageAcceuil();
+            request.setAttribute("affichageArticle", affichageArticles);
 
             request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
 

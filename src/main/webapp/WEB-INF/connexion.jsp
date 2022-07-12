@@ -37,10 +37,12 @@
             </div>
         </div>
     </div>
-
-    <input type="submit" value="Créer un compte">
-
 </form>
-<a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
+<div class="connection">
+    <div class="lien">
+        <a href="InscriptionServlet">S'inscrire </a>
+    </div>
+</div>
+
 </body>
 </html>
