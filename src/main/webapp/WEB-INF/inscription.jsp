@@ -63,7 +63,7 @@
     </div>
     <div class="inputCreer">
         <input type="submit" name="valider" value="CREER">
-        <a href="index.jsp">Annuler</a>
+        <a href="index">Annuler</a>
     </div>
 </form>
 </body>
