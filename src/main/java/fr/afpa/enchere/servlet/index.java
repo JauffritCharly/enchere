@@ -23,6 +23,11 @@ public class index extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        MethodSQL methodSQl = new MethodSQL();
+        String recherche = request.getParameter("rechercheArticle");
+        ArrayList<ArticleVendu> affichageArticlePageAcceuil = methodSQl.affichageArticleRecherche(recherche);
+        request.setAttribute("affichageArticle", affichageArticlePageAcceuil);
 
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

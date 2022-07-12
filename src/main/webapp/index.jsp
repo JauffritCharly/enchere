@@ -35,8 +35,8 @@
     </div>
 </header>
 <main>
-    <div class="">
-        <form action="#RechercheServlet" method="get" class="formeAcceuil">
+    <div>
+        <form action="index" method="post" class="formeAcceuil">
             <input type="text" name="rechercheArticle" id="rechercheArticle"
                    placeholder="Le nom de l'article contient">
             <select name="categorie : " id="categorie">
