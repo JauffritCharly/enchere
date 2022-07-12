@@ -16,6 +16,7 @@ header {
     justify-content: center;
 }
 
+
 #informations {
     display: flex;
     flex-direction: column;
@@ -27,3 +28,4 @@ header {
     justify-content: center;
     margin: 2%;
 }
+

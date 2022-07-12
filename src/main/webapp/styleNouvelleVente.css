@@ -1,3 +1,16 @@
+body {
+    height: 100%;
+    font-family: 'Roboto';
+    background: linear-gradient(142deg, rgba(250, 250, 213, 1) 0%, rgba(238, 217, 153, 1) 0%, rgba(242, 243, 244, 1) 78%);
+}
+
+h2 {
+    font-family: 'Roboto';
+    font-size: 3em;
+    text-align: center;
+    margin-top: 1em;
+}
+
 #form1 {
     display: flex;
     justify-content: center;
@@ -13,10 +26,54 @@
 .column {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.column1 {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    line-height: 2em;
 }
 
 .row {
     display: flex;
     flex-direction: row;
+}
+
+label {
+    margin-top: 2em;
+}
+
+input {
+    margin-top: 3.1em;
+    border: 1px solid black;
+    border-radius: 0.5em;
+}
+
+select {
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+}
+
+.retrait {
+    margin-top: 2.75em;
+}
+
+.inputCreer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18em;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    height: 1.8em;
+    width: 10em;
+    text-align: center;
+    background-color: #ef7109;
+    box-shadow: 5px 5px 10px -2px #000000;
+    margin: 2em 4em;
+    cursor: pointer;
 }

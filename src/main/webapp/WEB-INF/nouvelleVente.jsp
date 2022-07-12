@@ -15,9 +15,9 @@
 <main>
     <div class="column">
         <h1>Nouvelle Vente</h1>
-        <form id="form1" action="EnchereServlet" method="post">
+        <form action="EnchereServlet" method="post">
             <div class="row">
-                <div class="column">
+                <div class="column1">
                     <label for="saisieArticle"> Article : </label>
                     <label for="descriptionSaisie">Description : </label>
                     <label for="categorieChoisie"> Catégorie : </label>
@@ -26,9 +26,9 @@
                     <label for="debutEnchereSaisie">Début de l'enchère : </label>
                     <label for="finEnchereSaisie">Fin de l'enchère : </label>
                 </div>
-                <div class="column">
-                    <input type="" name="saisieArticle" id="saisieArticle" required>
-                    <textarea name="descriptionSaisie" id="descriptionSaisie" required cols="30" rows="10"></textarea>
+                <div class="column1">
+                    <input type="text" name="saisieArticle" id="saisieArticle" required>
+                    <input type="text" name="descriptionSaisie" id="descriptionSaisie" required>
                     <select name="categorieChoisie" id="categorieChoisie" required>
                         <option disabled>Choisissez une catégorie</option>
                         <option value="1">Informatique</option>
@@ -47,9 +47,9 @@
                 <Legend>Retrait</Legend>
                 <div class="row">
                     <div class="column">
-                        <label for="rueRetrait">Rue : </label>
-                        <label for="cPRetrait">Code Postal : </label>
-                        <label for="villeRetrait">Ville : </label>
+                        <label for="rueRetrait" class="retrait">Rue : </label>
+                        <label for="cPRetrait" class="retrait">Code Postal : </label>
+                        <label for="villeRetrait" class="retrait">Ville : </label>
                     </div>
                     <div class="column">
 
@@ -60,14 +60,15 @@
                 </div>
             </fieldset>
 
-            <input type="submit" value="Enregistrer">
-            <input type="reset" value="Reset formulaire">
+            <input class="inputCreer" type="submit" value="Enregistrer">
+            <input class="inputCreer" type="reset" value="Reset formulaire">
+        </form>
+        <form action="AccueilConnectedServlet" method="get">
+            <input class="inputCreer" type="submit" name="retourAccueil" value="Retour">
         </form>
     </div>
 
-    <form action="AccueilConnectedServlet" method="get">
-        <input type="submit" name="retourAccueil" value="Retour">
-    </form>
+
 </main>
 </body>
 </html>

@@ -7,12 +7,15 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/styleConnexion.css">
+    <link rel="stylesheet" href="styleConnexion.css">
     <title>Accueil</title>
 </head>
+<header>
+    <h1>Connexion :</h1>
+</header>
 <body>
 
-<form action="ConnexionServlet" method="post">
+<form action="ConnexionServlet" method="post" id="form">
 
     <label for="saisieIdentifiant"> Identifiant :</label>
     <input type="text" name="saisieIdentifiant" id="saisieIdentifiant" value="${login}">
@@ -37,10 +40,12 @@
             </div>
         </div>
     </div>
-
-    <input type="submit" value="Créer un compte">
-
 </form>
-<a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
+<div class="connection">
+    <div class="lien">
+        <a href="InscriptionServlet">S'inscrire </a>
+    </div>
+</div>
+
 </body>
 </html>
