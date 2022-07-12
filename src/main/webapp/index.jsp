@@ -18,59 +18,53 @@
 <header>
     <div class="connection">
         <div class="lien">
-            <a href="InscriptionServlet">S'inscrire </a>
+            <a href="InscriptionServlet">S'inscrire</a>
         </div>
         <div class="lien">
-            <a href="ConnexionServlet"> Se connecter</a>
+            <a href="ConnexionServlet">Se connecter</a>
         </div>
     </div>
     <div class="enTete">
-        <div class="titre  animate__animated animate__bounce">
-            <h1>Interenchere </h1>
-            <h2>Le meilleur site d'enchère Francais </h2>
+        <div>
+            <img class="logo" src="img/logo-g9fe0fcf63_1280-removebg-preview.png" alt="">
         </div>
-        <div class="logo">
-            <img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo">
+        <div class="titre">
+            <h1>Bienvenue sur les enchères trop bien </h1>
         </div>
     </div>
 </header>
 <main>
-    <div class="">
-        <form action="#RechercheServlet" method="get" class="formeAcceuil">
-            <label for="rechercheArticle"> Filtres :</label>
-            <input type="search" name="rechercheArticle" id="rechercheArticle"
-                   placeholder="Le nom de l'article contient">
-            <label for="categorie"> Filtres :</label>
-            <select name="categorie : " id="categorie">
-                <option value="">Toutes</option>
-                <option value="1">Informatique</option>
-                <option value="2">Ameublement</option>
-                <option value="3">Vêtement</option>
-                <option value="4">Sport&Loisirs</option>
-            </select>
-            <option value=""></option>
-            <input type="submit" value="Rechercher" class="boutonrechercher">
-        </form>
-    </div>
-    <div class="touteEnchere">
-        <c:forEach var="article" items="${affichageArticle}">
-            <div class="enchere">
-                <div>
-                    <h2>${article.nomArticle}</h2>
-                </div>
-                <div>
-                    <p>Prix : ${article.prixInitial}</p>
-                </div>
-                <div>
-                    <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
-                </div>
-                <div>
-                    <p>Vendeur : ${article.pseudo}</p>
-                </div>
-            </div>
-        </c:forEach>
-    </div>
 
+    <form action="#RechercheServlet" method="get">
+
+
+        <label for="rechercheArticle"> Filtres :</label>
+        <input type="search" name="rechercheArticle" id="rechercheArticle" placeholder="Le nom de l'article contient">
+        <label for="categorie"> Filtres :</label>
+        <select name="categorie : " id="categorie">
+            <option value="">Toutes</option>
+            <option value="1">Informatique</option>
+            <option value="2">Ameublement</option>
+            <option value="3">Vêtement</option>
+            <option value="4">Sport&Loisirs</option>
+        </select>
+        <option value=""></option>
+        <input type="submit" value="Rechercher">
+    </form>
+    <c:forEach var="article" items="${affichageArticle}">
+        <div>
+            <h2>${article.nomArticle}</h2>
+        </div>
+        <div>
+            <p>Prix : ${article.prixInitial}</p>
+        </div>
+        <div>
+            <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
+        </div>
+        <div>
+            <a href="AfficherProfilServlet?pseudo=${article.pseudo}">${article.pseudo} </a>
+        </div>
+    </c:forEach>
 </main>
 
 </body>

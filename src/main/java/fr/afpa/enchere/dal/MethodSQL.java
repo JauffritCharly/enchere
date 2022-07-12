@@ -203,6 +203,30 @@ public class MethodSQL {
         }
     }
 
+    public Utilisateur affichageUnProfil(String pseudo) {
+        Utilisateur utilisateur = null;
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt1 = connection.prepareStatement("SELECT nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe FROM utilisateurs WHERE pseudo = ?");
+            pstmt1.setString(1, pseudo);
+            ResultSet rs = pstmt1.executeQuery();
+            while (rs.next()) {
+                String nomUtilisateur = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                String email = rs.getString("email");
+                String telephone = rs.getString("telephone");
+                String rue = rs.getString("rue");
+                String codePostal = rs.getString("code_postal");
+                String ville = rs.getString("ville");
+
+                utilisateur = new Utilisateur(nomUtilisateur, prenom, email, telephone, rue, codePostal, ville);
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return utilisateur;
 
 
 /*
@@ -225,3 +249,7 @@ public class MethodSQL {
 */
 
 }
+
+}
+
+

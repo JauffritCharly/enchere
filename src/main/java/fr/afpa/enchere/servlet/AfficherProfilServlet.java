@@ -1,5 +1,6 @@
 package fr.afpa.enchere.servlet;
 
+import fr.afpa.enchere.bo.ArticleVendu;
 import fr.afpa.enchere.bo.Utilisateur;
 import fr.afpa.enchere.dal.MethodSQL;
 import jakarta.servlet.*;
@@ -12,7 +13,12 @@ import java.io.IOException;
 public class AfficherProfilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        MethodSQL methodSQL = new MethodSQL();
+        Utilisateur utilisateur = methodSQL.affichageUnProfil(request.getParameter("pseudo"));
+        System.out.println(utilisateur);
+        request.setAttribute("utilisateur", utilisateur);
 
+        request.getRequestDispatcher("WEB-INF/profilUtilisateur.jsp").forward(request, response);
     }
 
     @Override
