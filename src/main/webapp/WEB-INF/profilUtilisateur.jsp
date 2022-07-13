@@ -49,7 +49,7 @@
     </div>
     <div id="boutonProfil">
         <div>
-            <form action="index" method="get">
+            <form action="RetourServlet" method="get">
                 <input type="submit" name="retourAccueil" value="Retour" id="retour">
             </form>
         </div>

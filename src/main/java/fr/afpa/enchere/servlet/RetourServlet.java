@@ -16,7 +16,7 @@ public class RetourServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MethodSQL methodSQL = new MethodSQL();
 
-        ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageAcceuil();
+        ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageConnecte();
         request.setAttribute("affichageArticle", affichageArticles);
 
         request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);

@@ -15,7 +15,7 @@
 <body>
 <div class="header">
     <div class="imglogoInscription">
-        <img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo">
+        <a href="index"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
     </div>
     <div class="titreInscription">
         <h2>Inscription Profil :</h2>
