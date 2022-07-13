@@ -22,67 +22,68 @@
 <main>
 
     <h1>Liste des enchères - Connecté</h1>
+    <div id="divform">
+        <form action="#RechercheServlet" method="get" class="row">
+            <div class="rowform">
+                <div class="filtre">
+                    <label for="rechercheArticle"> Filtres :</label>
+                    <input type="search" name="rechercheArticle" id="rechercheArticle"
+                           placeholder="Le nom de l'article contient">
+                    <label for="categorie"> Catégorie :</label>
+                    <select name="categorie : " id="categorie">
 
-    <form action="#RechercheServlet" method="get" class="row">
-        <div class="row">
-            <div class="column">
-                <label for="rechercheArticle"> Filtres :</label>
-                <input type="search" name="rechercheArticle" id="rechercheArticle"
-                       placeholder="Le nom de l'article contient">
-                <label for="categorie"> Catégorie :</label>
-                <select name="categorie : " id="categorie">
-
-                    <option value="0" selected disabled>Toutes</option>
-                    <option value="1">Informatique</option>
-                    <option value="2">Ameublement</option>
-                    <option value="3">Vêtement</option>
-                    <option value="4">Sport&Loisirs</option>
-                </select>
-            </div>
-            <fieldset class="row">
-                <div class="column">
-                    <div class="row">
-                        <input type="radio" id="radioAchat" name="achatVente" value="achat">
-                        <label for="radioAchat">Achats</label>
-                    </div>
-
-                    <div class="row">
-                        <input type="checkbox" id="encheresOuvertes" name="encheresOuvertes">
-                        <label for="encheresOuvertes">enchères Ouvertes</label>
-                    </div>
-                    <div class="row">
-                        <input type="checkbox" id="encheresEnCours" name="encheresEnCours">
-                        <label for="encheresEnCours">mes enchères en cours</label>
-                    </div>
-                    <div class="row">
-                        <input type="checkbox" id="encheresRemportees" name="encheresRemportees">
-                        <label for="encheresRemportees">mes enchères remportées</label>
-                    </div>
+                        <option value="0" selected disabled>Toutes</option>
+                        <option value="1">Informatique</option>
+                        <option value="2">Ameublement</option>
+                        <option value="3">Vêtement</option>
+                        <option value="4">Sport&Loisirs</option>
+                    </select>
                 </div>
-                <div class="column">
-                    <div class="row">
-                        <input type="radio" id="radioVente" name="achatVente" value="vente">
-                        <label for="radioVente">Mes ventes</label>
+                <fieldset>
+                    <div class="column">
+                        <div class="row">
+                            <input type="radio" id="radioAchat" name="achatVente" value="achat" disabled>
+                            <label for="radioAchat">Achats</label>
+                        </div>
+
+                        <div class="row">
+                            <input type="checkbox" id="encheresOuvertes" name="encheresOuvertes" disabled>
+                            <label for="encheresOuvertes">Enchères Ouvertes</label>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="encheresEnCours" name="encheresEnCours" disabled>
+                            <label for="encheresEnCours">Enchères en cours</label>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="encheresRemportees" name="encheresRemportees" disabled>
+                            <label for="encheresRemportees">Enchères remportées</label>
+                        </div>
                     </div>
-                    <div class="row">
-                        <input type="checkbox" id="ventesEnCours" name="ventesEnCours">
-                        <label for="ventesEnCours">mes ventes en cours</label>
+                    <div class="column">
+                        <div class="row">
+                            <input type="radio" id="radioVente" name="achatVente" value="vente" disabled>
+                            <label for="radioVente">Mes ventes</label>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="ventesEnCours" name="ventesEnCours" disabled>
+                            <label for="ventesEnCours">Ventes en cours</label>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="ventesNonDebutees" name="ventesNonDebutees" disabled>
+                            <label for="ventesNonDebutees">Ventes non débutées</label>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="ventesTerminées" name="ventesTerminées" disabled>
+                            <label for="ventesTerminées">Ventes terminées</label>
+                        </div>
                     </div>
-                    <div class="row">
-                        <input type="checkbox" id="ventesNonDebutees" name="ventesNonDebutees">
-                        <label for="ventesNonDebutees">ventes non débutées</label>
-                    </div>
-                    <div class="row">
-                        <input type="checkbox" id="ventesTerminées" name="ventesTerminées">
-                        <label for="ventesTerminées">ventes terminées</label>
-                    </div>
+                </fieldset>
+                <div>
+                    <input type="submit" value="Rechercher" id="rechercherEnchere">
                 </div>
-            </fieldset>
-            <div>
-                <input type="submit" value="Rechercher" id="rechercherEnchere">
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
     <div class="touteEnchere">
         <c:forEach var="article" items="${affichageArticle}">
             <div class="enchere">

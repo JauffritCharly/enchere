@@ -22,13 +22,14 @@ h1 {
     font-family: 'Roboto';
     font-size: 3em;
     text-align: center;
-    margin-top: 1em;
+    margin-top: -1em;
 }
 
 #form1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-top: -1em;
 }
 
 #categorieChoisie {

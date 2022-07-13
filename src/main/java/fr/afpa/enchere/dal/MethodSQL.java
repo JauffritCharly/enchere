@@ -173,14 +173,44 @@ public class MethodSQL {
                 affichageArticlesRecherche.add(articleVendu);
             }
             connection.close();
-            /*Select nom_article, description, date_fin_encheres,prix_vente, pseudo, articles_vendus.no_categorie from articles_vendus inner join utilisateurs
-    on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur inner join categories
-        on articles_vendus.no_categorie = categories.no_categorie where articles_vendus.nom_article like '%V%' and articles_vendus.no_categorie like ''; */
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return affichageArticlesRecherche;
+    }
+
+    public ArrayList<ArticleVendu> affichageArticleAcceuiConnecte(String recherche, int noCategorie) {
+        ArrayList<ArticleVendu> affichageArticleAcceuiConnecte = new ArrayList<>();
+
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+
+            PreparedStatement pstmt1 = connection.prepareStatement("Select nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, pseudo, articles_vendus.no_categorie from articles_vendus inner join utilisateurs\n" +
+                    "    on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur inner join categories\n" +
+                    "        on articles_vendus.no_categorie = categories.no_categorie where articles_vendus.nom_article like ? and articles_vendus.no_categorie like ?; ");
+            pstmt1.setString(1, "%" + recherche + "%");
+            pstmt1.setString(2, "%" + noCategorie + "%");
+            ResultSet rs = pstmt1.executeQuery();
+
+            while (rs.next()) {
+                ArticleVendu articleVendu = new ArticleVendu(
+                        rs.getString("nom_article"),
+                        rs.getString("description"),
+                        rs.getDate("date_debut_encheres"),
+                        rs.getDate("date_fin_encheres"),
+                        rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"),
+                        rs.getString("pseudo")
+                );
+                affichageArticleAcceuiConnecte.add(articleVendu);
+            }
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return affichageArticleAcceuiConnecte;
     }
 
     public void miseAJourProfil(int no_utilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse) {
