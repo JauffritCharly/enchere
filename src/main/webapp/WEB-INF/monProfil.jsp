@@ -13,7 +13,6 @@
     <div class="logo">
         <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
     </div>
-    </div>
 </header>
 <body>
 <div>

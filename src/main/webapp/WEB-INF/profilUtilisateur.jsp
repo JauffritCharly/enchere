@@ -10,11 +10,14 @@
     <title>Profil Utilisateur</title>
 </head>
 <header>
-    <h1>Profil Utilisateur :</h1>
+    <div class="logo">
+        <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
+    </div>
 </header>
 <body>
 <div>
     <div id="informations">
+        <h1>Profil Utilisateur :</h1>
         <div class="caseProfil">
             <p>Nom</p>
             <input type="text" name="nom" value="${utilisateur.nom}" disabled>

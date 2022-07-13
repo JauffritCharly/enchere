@@ -1,5 +1,6 @@
 package fr.afpa.enchere.servlet;
 
+import fr.afpa.enchere.bo.ArticleVendu;
 import fr.afpa.enchere.bo.Utilisateur;
 import fr.afpa.enchere.dal.MethodSQL;
 import jakarta.servlet.*;
@@ -7,6 +8,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet("/MiseAJourProfilServlet")
 public class MiseAJourProfilServlet extends HttpServlet {
@@ -29,6 +31,9 @@ public class MiseAJourProfilServlet extends HttpServlet {
         String ville = request.getParameter("ville");
         String mot_de_passe = request.getParameter("mot_de_passe");
         methodSQL.miseAJourProfil(no_utilisateur, pseudo, nom, prenom, email, telephone, rue, code_postal, ville, mot_de_passe);
+
+        ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageAcceuil();
+        request.setAttribute("affichageArticle", affichageArticles);
 
         request.setAttribute("utilisateur", utilisateur);
         request.getRequestDispatcher("AccueilConnectedServlet").forward(request, response);

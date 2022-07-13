@@ -24,7 +24,15 @@ h1 {
     margin: 2%;
 }
 
+
+header {
+    display: flex;
+    justify-content: flex-start;
+}
+
 .imgLogo {
-    width: 5%;
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 

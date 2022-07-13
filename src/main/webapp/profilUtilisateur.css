@@ -13,7 +13,13 @@ h1 {
 
 header {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+}
+
+.imgLogo {
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 
 #informations {

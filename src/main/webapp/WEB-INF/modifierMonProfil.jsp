@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="modifierMonProfil.css">
     <title>Modifier mon profil</title>
 </head>
+<header>
+    <div class="logo">
+        <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
+    </div>
+</header>
 <body>
 <div id="formulaire">
     <div id="titrePage">
