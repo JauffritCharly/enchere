@@ -6,7 +6,6 @@ import fr.afpa.enchere.bo.Utilisateur;
 import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MethodSQL {
 
@@ -56,6 +55,7 @@ public class MethodSQL {
                 utilisateur = new Utilisateur(idUtilisateur, pseudoUtilisateur, nomUtilisateur, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit);
 
             }
+            connection.close();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -111,6 +111,7 @@ public class MethodSQL {
                 utilisateur = new Utilisateur(pseudoUtilisateur, nomUtilisateur, prenom, email, telephone, rue, codePostal, ville, motDePasse, credit);
 
             }
+            connection.close();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -259,6 +260,7 @@ public class MethodSQL {
                 utilisateur = new Utilisateur(nomUtilisateur, prenom, email, telephone, rue, codePostal, ville);
 
             }
+            connection.close();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
