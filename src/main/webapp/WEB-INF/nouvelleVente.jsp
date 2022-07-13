@@ -52,7 +52,6 @@
                         <label for="villeRetrait" class="retrait">Ville : </label>
                     </div>
                     <div class="column">
-
                         <input type="text" name="rueRetrait" id="rueRetrait" value="${utilisateur.rue}" required>
                         <input type="text" name="cPRetrait" id="cPRetrait" value="${utilisateur.codePostal}" required>
                         <input type="text" name="villeRetrait" id="villeRetrait" value="${utilisateur.ville}" required>
@@ -61,9 +60,12 @@
             </fieldset>
             <input class="inputCreer" type="submit" value="Enregistrer">
             <input class="inputCreer" type="reset" value="Reset formulaire">
-            <input action="AccueilConnectedServlet" class="inputCreer" type="submit" name="retourAccueil"
-                   value="Retour">
+
         </form>
+        <div class="inputCreer2">
+            <a href="AccueilConnectedServlet">Retour </a>
+        </div>
+
     </div>
 
 

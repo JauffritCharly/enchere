@@ -7,16 +7,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/styleAccueilConnected.css">
+    <link rel="stylesheet" href="styleAccueilConnected.css">
     <title>Encheres</title>
 </head>
 <body>
 <header>
-    <a href="${pageContext.request.contextPath}/index">Enchere</a>
-    <a href="${pageContext.request.contextPath}/EnchereServlet">Vendre un article</a>
-    <a href="${pageContext.request.contextPath}/MonProfilServlet">Mon profil</a>
-    <a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
-
+    <div class="rowheader">
+        <a href="${pageContext.request.contextPath}/index">Enchere</a>
+        <a href="${pageContext.request.contextPath}/EnchereServlet">Vendre un article</a>
+        <a href="${pageContext.request.contextPath}/MonProfilServlet">Mon profil</a>
+        <a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
+    </div>
 </header>
 <main>
 

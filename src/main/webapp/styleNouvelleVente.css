@@ -81,3 +81,21 @@ select {
     margin-left: 10em;
     cursor: pointer;
 }
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.2em;
+    margin-top: 2.5em;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    height: 1.3em;
+    width: 8.3em;
+    text-align: center;
+    background-color: #ef7109;
+    box-shadow: 5px 5px 10px -2px #000000;
+    cursor: pointer;
+}
