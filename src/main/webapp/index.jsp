@@ -39,7 +39,7 @@
         <form action="index" method="post" class="formeAcceuil">
             <input type="text" name="rechercheArticle" id="rechercheArticle"
                    placeholder="Le nom de l'article contient">
-            <select name="categorie : " id="categorie">
+            <select name="categorie" id="categorie">
                 <option value="">Toutes</option>
                 <option value="1">Informatique</option>
                 <option value="2">Ameublement</option>

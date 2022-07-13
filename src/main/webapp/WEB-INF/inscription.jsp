@@ -13,7 +13,14 @@
     <title>Inscription</title>
 </head>
 <body>
-<h2>Inscription Profil :</h2>
+<div class="header">
+    <div class="imglogoInscription">
+        <img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo">
+    </div>
+    <div class="titreInscription">
+        <h2>Inscription Profil :</h2>
+    </div>
+</div>
 <form action="InscriptionServlet" method="post">
     <div class="formulaireInscription">
         <div class="formGauche">

@@ -25,7 +25,9 @@ public class index extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         MethodSQL methodSQl = new MethodSQL();
         String recherche = request.getParameter("rechercheArticle");
-        ArrayList<ArticleVendu> affichageArticlePageAcceuil = methodSQl.affichageArticleRecherche(recherche);
+        int noCategorie = Integer.parseInt(request.getParameter("categorie"));
+        ArrayList<ArticleVendu> affichageArticlePageAcceuil = methodSQl.affichageArticleRecherche(recherche, noCategorie);
+        System.out.println(affichageArticlePageAcceuil);
         request.setAttribute("affichageArticle", affichageArticlePageAcceuil);
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
