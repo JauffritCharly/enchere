@@ -37,8 +37,8 @@ public class InscriptionServlet extends HttpServlet {
 
 
         if (mot_de_passe.equals(confirmationmdp)) {
-            MethodSQL methodSQL = new MethodSQL();
 
+            MethodSQL methodSQL = new MethodSQL();
             ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageConnecte();
             request.setAttribute("affichageArticle", affichageArticles);
 

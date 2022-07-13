@@ -18,10 +18,10 @@
 <form action="ConnexionServlet" method="post" id="form">
     <div class="card">
         <div class="input">
-            <input type="text" name="saisieIdentifiant" id="saisieIdentifiant" value="${login}">
+            <input type="text" name="saisieIdentifiant" id="saisieIdentifiant" value="${login}" placeholder="Login">
         </div>
         <div class="input">
-            <input type="password" name="saisiePassword" id="saisiePassword" value="Password">
+            <input type="password" name="saisiePassword" id="saisiePassword" placeholder="Password">
         </div>
         <div class="submit">
             <input type="submit" value="Connexion">
