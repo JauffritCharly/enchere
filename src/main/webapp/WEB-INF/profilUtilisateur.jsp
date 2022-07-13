@@ -46,7 +46,7 @@
     </div>
     <div id="boutonProfil">
         <div>
-            <form action="AccueilConnectedServlet" method="get">
+            <form action="index" method="get">
                 <input type="submit" name="retourAccueil" value="Retour">
             </form>
         </div>

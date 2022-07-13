@@ -146,13 +146,17 @@ public class MethodSQL {
         return affichageArticles;
     }
 
-    public ArrayList<ArticleVendu> affichageArticleRecherche(String recherche) {
+    public ArrayList<ArticleVendu> affichageArticleRecherche(String recherche, int noCategorie) {
         ArrayList<ArticleVendu> affichageArticlesRecherche = new ArrayList<>();
 
         try {
             Connection connection = ConnectionProvider.getConnection();
-            PreparedStatement pstmt1 = connection.prepareStatement("SELECT nom_article,description,date_debut_encheres,date_fin_encheres, prix_initial,prix_vente, pseudo FROM articles_vendus inner join utilisateurs on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur where nom_article like ?");
+
+            PreparedStatement pstmt1 = connection.prepareStatement("Select nom_article, description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, pseudo, articles_vendus.no_categorie from articles_vendus inner join utilisateurs\n" +
+                    "    on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur inner join categories\n" +
+                    "        on articles_vendus.no_categorie = categories.no_categorie where articles_vendus.nom_article like ? and articles_vendus.no_categorie like ?; ");
             pstmt1.setString(1, "%" + recherche + "%");
+            pstmt1.setString(2, "%" + noCategorie + "%");
             ResultSet rs = pstmt1.executeQuery();
 
             while (rs.next()) {
