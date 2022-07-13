@@ -24,7 +24,7 @@
 <body>
 <div id="formulaire">
     <div id="titrePage">
-        <p>Modifier mon Profil</p>
+        <h1>Modifier mon Profil :</h1>
     </div>
     <div id="champs">
         <form action="MiseAJourProfilServlet" method="get" id="form">
@@ -66,8 +66,8 @@
                 <input type="submit" value="Enregistrer la modification">
             </div>
         </form>
-        <form action="MiseAJourProfilServlet" method="post">
-            <input type="submit" value="Supprimer le compte">
+        <form action="MiseAJourProfilServlet" method="post" >
+            <input type="submit" value="Supprimer le compte" id="supprimer">
         </form>
     </div>
 </div>

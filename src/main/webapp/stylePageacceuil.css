@@ -20,6 +20,7 @@ body {
 
 .lien a:hover {
     color: #f3d01b;
+    cursor: pointer;
 }
 
 .lien a {
