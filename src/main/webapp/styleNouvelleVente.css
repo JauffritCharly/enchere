@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
+header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.imgLogo {
+    width: 20%;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
 body {
     height: 100%;
     font-family: 'Roboto';
@@ -82,7 +93,7 @@ select {
     cursor: pointer;
 }
 
-a {
+#retour {
     display: flex;
     justify-content: center;
     align-items: center;
