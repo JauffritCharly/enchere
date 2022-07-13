@@ -26,10 +26,15 @@ public class index extends HttpServlet {
         MethodSQL methodSQl = new MethodSQL();
         String recherche = request.getParameter("rechercheArticle");
         int noCategorie = Integer.parseInt(request.getParameter("categorie"));
-        ArrayList<ArticleVendu> affichageArticlePageAcceuil = methodSQl.affichageArticleRecherche(recherche, noCategorie);
-        System.out.println(affichageArticlePageAcceuil);
-        request.setAttribute("affichageArticle", affichageArticlePageAcceuil);
 
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        if (recherche.isEmpty() && noCategorie == 0) {
+            ArrayList<ArticleVendu> affichageArticles = methodSQl.affichageArticlePageAcceuil();
+            request.setAttribute("affichageArticle", affichageArticles);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else {
+            ArrayList<ArticleVendu> affichageArticlePageAcceuil = methodSQl.affichageArticleRecherche(recherche, noCategorie);
+            request.setAttribute("affichageArticle", affichageArticlePageAcceuil);
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
     }
 }

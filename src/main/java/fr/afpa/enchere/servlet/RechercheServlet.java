@@ -25,12 +25,15 @@ public class RechercheServlet extends HttpServlet {
         System.out.println(affichageArticlePageAcceuil);
         request.setAttribute("affichageArticle", affichageArticlePageAcceuil);
 
-        if (recherche == null && noCategorie == 0) {
+        System.out.println(recherche);
+        System.out.println(noCategorie);
+
+        if (recherche.isEmpty() && noCategorie == 0) {
             MethodSQL methodSQL = new MethodSQL();
 
             ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageConnecte();
             request.setAttribute("affichageArticle", affichageArticles);
-            
+
             request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
         }
 

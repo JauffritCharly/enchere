@@ -147,6 +147,7 @@ public class MethodSQL {
         return affichageArticles;
     }
 
+
     public ArrayList<ArticleVendu> affichageArticlePageConnecte() {
         ArrayList<ArticleVendu> affichageArticlePageConnecte = new ArrayList<>();
 
