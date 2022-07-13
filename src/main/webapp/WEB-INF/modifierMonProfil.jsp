@@ -63,11 +63,11 @@
                 </div>
             </div>
             <div id="bouton">
-                <input type="submit" value="Enregistrer la modification">
+                <input type="submit" value="Enregistrer" id="enregistrer">
             </div>
         </form>
         <form action="MiseAJourProfilServlet" method="post" >
-            <input type="submit" value="Supprimer le compte" id="supprimer">
+            <input type="submit" value="Supprimer" id="supprimer">
         </form>
     </div>
 </div>

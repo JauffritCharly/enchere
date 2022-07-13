@@ -54,14 +54,14 @@
         </div>
     </div>
     <div id="boutonProfil">
-        <div id="basGauche">
+        <div>
             <form action="MonProfilServlet" method="post">
-                <input type="submit" name="modifier" value="Modifier">
+                <input type="submit" name="modifier" value="Modifier"  id="basGauche">
             </form>
         </div>
-        <div id="basDroite">
+        <div >
             <form action="AccueilConnectedServlet" method="get">
-                <input type="submit" name="retourAccueil" value="Retour">
+                <input type="submit" name="retourAccueil" value="Retour" id="basDroite">
             </form>
         </div>
     </div>

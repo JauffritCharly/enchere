@@ -47,5 +47,26 @@ body {
 }
 
 #supprimer {
-    color: red;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    height: 1.8em;
+    width: 10em;
+    text-align: center;
+    background-color: #ef7109;
+    box-shadow: 5px 5px 10px -2px #000000;
+    margin: 2em 4em;
 }
+ #enregistrer {
+     text-decoration: none;
+     color: black;
+     border: 1px solid black;
+     border-radius: 0.4em;
+     height: 1.8em;
+     width: 10em;
+     text-align: center;
+     background-color: #ef7109;
+     box-shadow: 5px 5px 10px -2px #000000;
+     margin: 2em 4em;
+ }

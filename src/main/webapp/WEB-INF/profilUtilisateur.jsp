@@ -50,7 +50,7 @@
     <div id="boutonProfil">
         <div>
             <form action="index" method="get">
-                <input type="submit" name="retourAccueil" value="Retour">
+                <input type="submit" name="retourAccueil" value="Retour" id="retour">
             </form>
         </div>
     </div>
