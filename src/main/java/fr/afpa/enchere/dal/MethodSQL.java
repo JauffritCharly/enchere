@@ -147,6 +147,34 @@ public class MethodSQL {
         return affichageArticles;
     }
 
+    public ArrayList<ArticleVendu> affichageArticlePageConnecte() {
+        ArrayList<ArticleVendu> affichageArticlePageConnecte = new ArrayList<>();
+
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt1 = connection.prepareStatement("SELECT nom_article,description,date_debut_encheres,date_fin_encheres, prix_initial,prix_vente, pseudo FROM articles_vendus inner join utilisateurs  on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur");
+            ResultSet rs = pstmt1.executeQuery();
+
+            while (rs.next()) {
+                ArticleVendu articleVendu = new ArticleVendu(
+                        rs.getString("nom_article"),
+                        rs.getString("description"),
+                        rs.getDate("date_debut_encheres"),
+                        rs.getDate("date_fin_encheres"),
+                        rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"),
+                        rs.getString("pseudo")
+                );
+                affichageArticlePageConnecte.add(articleVendu);
+            }
+            connection.close();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return affichageArticlePageConnecte;
+    }
+
     public ArrayList<ArticleVendu> affichageArticleRecherche(String recherche, int noCategorie) {
         ArrayList<ArticleVendu> affichageArticlesRecherche = new ArrayList<>();
 
@@ -180,8 +208,8 @@ public class MethodSQL {
         return affichageArticlesRecherche;
     }
 
-    public ArrayList<ArticleVendu> affichageArticleAcceuiConnecte(String recherche, int noCategorie) {
-        ArrayList<ArticleVendu> affichageArticleAcceuiConnecte = new ArrayList<>();
+    public ArrayList<ArticleVendu> RechercheAcceuilConnecte(String recherche, int noCategorie) {
+        ArrayList<ArticleVendu> RechercheAcceuilConnecte = new ArrayList<>();
 
         try {
             Connection connection = ConnectionProvider.getConnection();
@@ -203,14 +231,14 @@ public class MethodSQL {
                         rs.getInt("prix_vente"),
                         rs.getString("pseudo")
                 );
-                affichageArticleAcceuiConnecte.add(articleVendu);
+                RechercheAcceuilConnecte.add(articleVendu);
             }
             connection.close();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return affichageArticleAcceuiConnecte;
+        return RechercheAcceuilConnecte;
     }
 
     public void miseAJourProfil(int no_utilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse) {

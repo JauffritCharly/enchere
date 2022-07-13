@@ -1,5 +1,6 @@
 package fr.afpa.enchere.servlet;
 
+import fr.afpa.enchere.bo.ArticleVendu;
 import fr.afpa.enchere.dal.MethodSQL;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 @WebServlet("/InscriptionServlet")
 public class InscriptionServlet extends HttpServlet {
@@ -35,7 +37,12 @@ public class InscriptionServlet extends HttpServlet {
 
 
         if (mot_de_passe.equals(confirmationmdp)) {
-            request.getRequestDispatcher("index").forward(request, response);
+            MethodSQL methodSQL = new MethodSQL();
+
+            ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageConnecte();
+            request.setAttribute("affichageArticle", affichageArticles);
+
+            request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
         } else {
             request.getRequestDispatcher("WEB-INF/pasbon.jsp").forward(request, response);
         }
