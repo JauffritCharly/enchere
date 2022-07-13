@@ -11,10 +11,14 @@
     <title>Accueil</title>
 </head>
 <header>
-    <h1>Connexion :</h1>
+    <header>
+        <div class="logo">
+            <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
+        </div>
+    </header>
 </header>
 <body>
-
+<h1>Connexion :</h1>
 <form action="ConnexionServlet" method="post" id="form">
     <div class="card">
         <div class="input">
