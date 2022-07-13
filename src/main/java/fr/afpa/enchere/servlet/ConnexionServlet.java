@@ -15,7 +15,6 @@ public class ConnexionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
             if (cookie.getName().equals("login")) {
@@ -24,8 +23,6 @@ public class ConnexionServlet extends HttpServlet {
             }
         }
         request.getRequestDispatcher("WEB-INF/connexion.jsp").forward(request, response);
-
-
     }
 
     @Override
@@ -48,8 +45,8 @@ public class ConnexionServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("verifconnexion", true);
             session.setAttribute("id", utilisateur.getIdUtilisateur());
-
-            ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageAcceuil();
+            
+            ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageConnecte();
             request.setAttribute("affichageArticle", affichageArticles);
 
             request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
