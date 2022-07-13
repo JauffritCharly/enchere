@@ -11,11 +11,6 @@ h1 {
     font-size: 2em;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-}
-
 
 #informations {
     display: flex;
@@ -27,5 +22,9 @@ header {
     display: flex;
     justify-content: center;
     margin: 2%;
+}
+
+.imgLogo {
+    width: 5%;
 }
 

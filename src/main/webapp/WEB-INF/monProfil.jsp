@@ -10,11 +10,17 @@
     <title>Mon Profil</title>
 </head>
 <header>
-<h1 id="titre">Mon profil :</h1>
+    <div class="logo">
+        <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
+    </div>
+    </div>
 </header>
 <body>
 <div>
     <div id="informations">
+        <div>
+            <h1 id="titre">Mon profil :</h1>
+        </div>
         <div class="caseProfil">
             <p>Pseudo</p>
             <input type="text" name="pseudo" value="${utilisateur.pseudo}" disabled >
