@@ -42,4 +42,10 @@ body {
     margin: 5%;
 }
 
+#bouton {
+    padding: 1%;
+}
 
+#supprimer {
+    color: red;
+}
