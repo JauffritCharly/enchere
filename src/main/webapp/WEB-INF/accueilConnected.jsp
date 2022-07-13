@@ -13,7 +13,7 @@
 <body>
 <header>
     <div class="rowheader">
-        <a href="${pageContext.request.contextPath}/index">Enchere</a>
+        <a href="AccueilConnectedServlet">Enchere</a>
         <a href="${pageContext.request.contextPath}/EnchereServlet">Vendre un article</a>
         <a href="${pageContext.request.contextPath}/MonProfilServlet">Mon profil</a>
         <a href="${pageContext.request.contextPath}/DeconnexionServlet">Deconnexion</a>
