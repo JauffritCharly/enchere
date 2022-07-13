@@ -18,6 +18,22 @@ public class RechercheServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        MethodSQL methodSQl = new MethodSQL();
+        String recherche = request.getParameter("rechercheArticle");
+        int noCategorie = Integer.parseInt(request.getParameter("categorie"));
+        ArrayList<ArticleVendu> affichageArticlePageAcceuil = methodSQl.RechercheAcceuilConnecte(recherche, noCategorie);
+        System.out.println(affichageArticlePageAcceuil);
+        request.setAttribute("affichageArticle", affichageArticlePageAcceuil);
 
+        if (recherche == null && noCategorie == 0) {
+            MethodSQL methodSQL = new MethodSQL();
+
+            ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageConnecte();
+            request.setAttribute("affichageArticle", affichageArticles);
+            
+            request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
+        }
+
+        request.getRequestDispatcher("WEB-INF/accueilConnected.jsp").forward(request, response);
     }
 }

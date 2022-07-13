@@ -23,16 +23,15 @@
 
     <h1>Liste des enchères - Connecté</h1>
     <div id="divform">
-        <form action="#RechercheServlet" method="get" class="row">
+        <form action="RechercheServlet" method="post" class="row">
             <div class="rowform">
                 <div class="filtre">
                     <label for="rechercheArticle"> Filtres :</label>
                     <input type="search" name="rechercheArticle" id="rechercheArticle"
                            placeholder="Le nom de l'article contient">
                     <label for="categorie"> Catégorie :</label>
-                    <select name="categorie : " id="categorie">
-
-                        <option value="0" selected disabled>Toutes</option>
+                    <select name="categorie" id="categorie">
+                        <option value="0">Toutes</option>
                         <option value="1">Informatique</option>
                         <option value="2">Ameublement</option>
                         <option value="3">Vêtement</option>
