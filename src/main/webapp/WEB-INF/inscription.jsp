@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="inputCreer">
-        <input type="submit" name="valider" value="CREER">
+        <input type="submit" name="valider" value="Créer">
         <a href="index">Annuler</a>
     </div>
 </form>

@@ -48,6 +48,11 @@ public class MiseAJourProfilServlet extends HttpServlet {
         int no_utilisateur = id;
         methodSQL.supprimerCompte((no_utilisateur));
 
+
+        ArrayList<ArticleVendu> affichageArticles = methodSQL.affichageArticlePageAcceuil();
+        request.setAttribute("affichageArticle", affichageArticles);
+
         request.getRequestDispatcher("index.jsp").forward(request, response);
+        
     }
 }

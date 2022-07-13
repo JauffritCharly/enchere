@@ -16,16 +16,15 @@
     <link rel="stylesheet" href="modifierMonProfil.css">
     <title>Modifier mon profil</title>
 </head>
-<header>
-    <div class="logo">
-        <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
-    </div>
-</header>
 <body>
-<div id="formulaire">
+<div class="logo">
+    <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
     <div id="titrePage">
         <h1>Modifier mon Profil :</h1>
     </div>
+</div>
+<div id="formulaire">
+
     <div id="champs">
         <form action="MiseAJourProfilServlet" method="get" id="form">
             <div>
@@ -66,7 +65,7 @@
                 <input type="submit" value="Enregistrer" id="enregistrer">
             </div>
         </form>
-        <form action="MiseAJourProfilServlet" method="post" >
+        <form action="MiseAJourProfilServlet" method="post">
             <input type="submit" value="Supprimer" id="supprimer">
         </form>
     </div>
