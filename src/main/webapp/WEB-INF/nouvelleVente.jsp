@@ -10,14 +10,15 @@
     <title>Nouvelle vente</title>
     <link rel="stylesheet" href="styleNouvelleVente.css">
 </head>
+
+<body>
 <header>
+
+</header>
+<main>
     <div class="logo">
         <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
     </div>
-</header>
-<body>
-
-<main>
     <div class="column">
         <h1>Nouvelle Vente</h1>
         <form id="form1" action="EnchereServlet" method="post">

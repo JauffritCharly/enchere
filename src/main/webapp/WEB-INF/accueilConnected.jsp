@@ -21,7 +21,7 @@
 </header>
 <main>
 
-    <h1>Liste des enchères - Connecté</h1>
+    <h1>Interenchere</h1>
     <div id="divform">
         <form action="RechercheServlet" method="post" class="row">
             <div class="rowform">

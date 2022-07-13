@@ -8,10 +8,9 @@ body {
 }
 
 h1 {
-    font-family: 'Roboto';
-    font-size: 3em;
+    font-family: 'Lobster';
+    font-size: 6em;
     text-align: center;
-    margin-top: 1em;
 }
 
 .rowheader {
@@ -109,9 +108,9 @@ select {
 
 .touteEnchere {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 4.8em;
-    margin-bottom: 4em;
+    justify-content: space-around;
+    margin: 4em 4em 4em 4em;
+    flex-wrap: wrap;
 }
 
 #rechercherEnchere {
