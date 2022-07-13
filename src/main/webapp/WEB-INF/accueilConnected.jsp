@@ -24,13 +24,11 @@
     <h1>Liste des enchères - Connecté</h1>
 
     <form action="#RechercheServlet" method="get" class="row">
-        <div class="column">
+        <div class="row">
             <div class="column">
                 <label for="rechercheArticle"> Filtres :</label>
                 <input type="search" name="rechercheArticle" id="rechercheArticle"
                        placeholder="Le nom de l'article contient">
-            </div>
-            <div class="row">
                 <label for="categorie"> Catégorie :</label>
                 <select name="categorie : " id="categorie">
 
@@ -80,23 +78,29 @@
                     </div>
                 </div>
             </fieldset>
+            <div>
+                <input type="submit" value="Rechercher" id="rechercherEnchere">
+            </div>
         </div>
-        <input type="submit" value="Rechercher" id="rechercherEnchere">
     </form>
-    <c:forEach var="article" items="${affichageArticle}">
-        <div>
-            <h2>${article.nomArticle}</h2>
-        </div>
-        <div>
-            <p>Prix : ${article.prixInitial}</p>
-        </div>
-        <div>
-            <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
-        </div>
-        <div>
-            <a href="AfficherProfilServlet?pseudo=${article.pseudo}">${article.pseudo}</a>
-        </div>
-    </c:forEach>
+    <div class="touteEnchere">
+        <c:forEach var="article" items="${affichageArticle}">
+            <div class="enchere">
+                <div>
+                    <h2>${article.nomArticle}</h2>
+                </div>
+                <div>
+                    <p>Prix : ${article.prixInitial}</p>
+                </div>
+                <div>
+                    <p>Fin de l'enchère : ${article.dateFinEncheres1}</p>
+                </div>
+                <div>
+                    <a href="AfficherProfilServlet?pseudo=${article.pseudo}">${article.pseudo}</a>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
 </main>
 
 </body>
