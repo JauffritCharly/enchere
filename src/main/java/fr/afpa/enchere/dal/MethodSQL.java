@@ -63,6 +63,7 @@ public class MethodSQL {
         return utilisateur;
     }
 
+
     public boolean connexion(String pseudo, String motDePasse) {
         int idUtilisateur = 0;
         try {
@@ -143,6 +144,38 @@ public class MethodSQL {
             System.out.println(e.getMessage());
         }
         return affichageArticles;
+    }
+
+    public ArrayList<ArticleVendu> affichageArticleRecherche(String recherche) {
+        ArrayList<ArticleVendu> affichageArticlesRecherche = new ArrayList<>();
+
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            PreparedStatement pstmt1 = connection.prepareStatement("SELECT nom_article,description,date_debut_encheres,date_fin_encheres, prix_initial,prix_vente, pseudo FROM articles_vendus inner join utilisateurs on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur where nom_article like ?");
+            pstmt1.setString(1, "%" + recherche + "%");
+            ResultSet rs = pstmt1.executeQuery();
+
+            while (rs.next()) {
+                ArticleVendu articleVendu = new ArticleVendu(
+                        rs.getString("nom_article"),
+                        rs.getString("description"),
+                        rs.getDate("date_debut_encheres"),
+                        rs.getDate("date_fin_encheres"),
+                        rs.getInt("prix_initial"),
+                        rs.getInt("prix_vente"),
+                        rs.getString("pseudo")
+                );
+                affichageArticlesRecherche.add(articleVendu);
+            }
+            connection.close();
+            /*Select nom_article, description, date_fin_encheres,prix_vente, pseudo, articles_vendus.no_categorie from articles_vendus inner join utilisateurs
+    on articles_vendus.no_utilisateur = utilisateurs.no_utilisateur inner join categories
+        on articles_vendus.no_categorie = categories.no_categorie where articles_vendus.nom_article like '%V%' and articles_vendus.no_categorie like ''; */
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return affichageArticlesRecherche;
     }
 
     public void miseAJourProfil(int no_utilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue, String codePostal, String ville, String motDePasse) {
@@ -229,6 +262,8 @@ public class MethodSQL {
         return utilisateur;
 
 
+
+
 /*
     // ----------------------A MODIFIER LE SELECT ALL AVEC UN WHERE --------------------------------------
     public List<ArticleVendu> selectAllArticleVendu() {
@@ -248,7 +283,7 @@ public class MethodSQL {
     }
 */
 
-}
+    }
 
 }
 

@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400&display=swap');
 
 body {
-    height: 100%;
-    font-family: 'Roboto';
+    overflow-y: hidden;
+    height: 99%;
     background: linear-gradient(142deg, rgba(250, 250, 213, 1) 0%, rgba(238, 217, 153, 1) 0%, rgba(242, 243, 244, 1) 78%);
 }
 
+body h2 {
+    font-family: 'Roboto', serif;
+}
 
 h2 {
-    font-family: 'Roboto';
     font-size: 3em;
     text-align: center;
     margin-top: 1em;
@@ -39,7 +41,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 18em;
+    margin-bottom: 23em;
 }
 
 .inputCreer input {

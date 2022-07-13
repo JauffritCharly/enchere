@@ -15,7 +15,7 @@
 <main>
     <div class="column">
         <h1>Nouvelle Vente</h1>
-        <form action="EnchereServlet" method="post">
+        <form id="form1" action="EnchereServlet" method="post">
             <div class="row">
                 <div class="column1">
                     <label for="saisieArticle"> Article : </label>
@@ -59,12 +59,10 @@
                     </div>
                 </div>
             </fieldset>
-
             <input class="inputCreer" type="submit" value="Enregistrer">
             <input class="inputCreer" type="reset" value="Reset formulaire">
-        </form>
-        <form action="AccueilConnectedServlet" method="get">
-            <input class="inputCreer" type="submit" name="retourAccueil" value="Retour">
+            <input action="AccueilConnectedServlet" class="inputCreer" type="submit" name="retourAccueil"
+                   value="Retour">
         </form>
     </div>
 
