@@ -10,6 +10,11 @@
     <title>Nouvelle vente</title>
     <link rel="stylesheet" href="styleNouvelleVente.css">
 </head>
+<header>
+    <div class="logo">
+        <a href="RetourServlet"><img src="img/Capture2-removebg-preview.png" alt="" class="imgLogo"></a>
+    </div>
+</header>
 <body>
 
 <main>
@@ -63,7 +68,7 @@
 
         </form>
         <div class="inputCreer2">
-            <a href="AccueilConnectedServlet">Retour </a>
+            <a href="AccueilConnectedServlet" id="retour">Retour </a>
         </div>
 
     </div>
